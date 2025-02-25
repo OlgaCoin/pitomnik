@@ -1,5 +1,89 @@
-
-
-
-
-
+@mixin h-1 {
+	font-family: $f_titles;
+	font-size: 56px;
+	font-weight: 700;
+	line-height: 1.25;
+	color: $t_titles;
+}
+@mixin h-2 {
+	font-family: $f_titles;
+	font-size: 46px;
+	font-weight: 700;
+	line-height: 1.35;
+	color: $t_titles;
+}
+@mixin h-3 {
+	font-family: $f_titles;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 1.17;
+	color: $t_titles;
+}
+@mixin h-4 {
+	font-family: $f_titles;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1.21;
+	color: $t_titles;
+}
+@mixin h-5 {
+	font-family: $f_titles;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1.25;
+	color: $t_titles;
+}
+@mixin h-6 {
+	font-family: $f_titles;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1.27;
+	color: $t_titles;
+}
+@mixin p1-bold {
+	font-family: $f_primary;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 1.36;
+}
+@mixin p1-med {
+	font-family: $f_primary;
+	font-size: 22px;
+	font-weight: 500;
+	line-height: 1.36;
+}
+@mixin p1-reg {
+	font-family: $f_primary;
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 1.36;
+}
+@mixin p2-med {
+	font-family: $f_primary;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1.4;
+}
+@mixin p2-reg {
+	font-family: $f_primary;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.4;
+}
+@mixin p3-reg {
+	font-family: $f_primary;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.33;
+}
+@mixin a-sm {
+	font-family: $f_primary;
+	font-size: 17px;
+	font-weight: 500;
+	color: $t_titles;	
+}
+@mixin flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

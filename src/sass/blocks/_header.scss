@@ -1,0 +1,60 @@
+.header {
+	width: 100%;
+	background-color: #fff;
+	position: relative;
+	z-index: 1000;
+	&__top {
+		min-height: 60px;
+		border-bottom: $border_green;
+		display: flex;
+		align-items: center;
+		&-wrapper {
+			@include flex;
+		}
+		&-item {
+			@include flex;
+		}
+	}
+	&__bottom {	
+		display: flex;
+		align-items: center;
+		background-color: #fff;
+		height: 96px;
+		box-shadow: $shadow_primary;
+		background-color: $bg;
+		position: relative;
+		z-index: 2;
+		transition: $trans;
+		&-wrapper {
+			@include flex;
+		}
+		&.fixed {
+			position: fixed;
+			top:0; 
+			left:0;
+			width: 100%; 
+		}
+	}
+	&__logo {
+		display: block;
+		& img {
+			max-width: 100%;
+		}
+		&--mobile {
+			display: none;
+			height: 50px;
+			& img {
+				height: 100%;
+			}
+		}
+	}
+	&__menu {
+		@include flex;
+		&-item {
+			display: block;
+			line-height: 55px;
+			transition: all .3s;
+		}
+	}
+
+}

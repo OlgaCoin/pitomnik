@@ -1,0 +1,16 @@
+.nav {
+	&__menu {
+		display: inline-flex;
+		gap: 30px;
+
+
+		&-item {
+			@include a-sm;
+			display: block;
+			transition: all 0.3s;
+			&:hover {
+				color: $green;
+			}
+		}
+	}
+}

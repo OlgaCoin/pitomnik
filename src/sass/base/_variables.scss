@@ -1,27 +1,34 @@
-$primary: #E9AD8C;
-$primary_dark: #D69978;
-$outline: #E0DDC7;
-$green: #02C3A1;
-$orange: #FF7A00;
-$red: #F34459;
+$green_dark: #095024;
+$green: #006634;
+$green_primary: #339967;
+$green_light: #34cc67;
+$green_stroke: #e5f3e9;
+$outline: #ececec;
+$bg: #f6f9f6;
+$red: #ed2020;
 $white: #fff;
 
-$t_dark: #423A25;
-$t_gray: #5C543E;
-$t_caption: #897F71;
-$t_light: #FDE8DE;
+$t_dark: #363636;
+$t_titles: #464a48;
+$t_primary: #6c766a;
+$t_light: #9e9c9c;
 
-$gradient_bg: linear-gradient(257deg, rgba(238, 234, 213, 0.60) -0.46%, rgba(250, 249, 242, 0.60) 36.65%, rgba(255, 255, 255, 0.60) 73.3%, rgba(231, 193, 173, 0.17) 108.33%);
-$gradient_primary: linear-gradient(90deg, #E9AD8C 3.4%, #DB9169 100%);
-$gradient_brown: linear-gradient(267deg, #B78A71 -3.5%, #C9A692 120.11%);
+$gradient_primary: linear-gradient(to right, var(--green_primary), #1cae4d);
+$gradient_hover: linear-gradient(90deg, rgba(51, 153, 103, 0.8) 0%, rgba(28, 174, 77, 0.8) 100%);
+$gradient_cta: linear-gradient(254deg, #ddece5 0%, #eff6f3 93.68%),
+	linear-gradient(319deg, rgba(221, 236, 229, 0.5) 0%, rgba(244, 251, 248, 0.5) 80.64%);
+$gradient_red: linear-gradient(260deg, #fa6f6f 5.54%, #e80a0a 100%);
+$gradient_blue: linear-gradient(53deg, #4a67ce 0%, #5d7ae3 100%);
 
-$f_sans: 'Gilroy', sans-serif;
-$f_serif: 'Lora', serif;
+$f_titles: "Gilroy", sans-serif;
+$f_primary: "Exo 2", sans-serif;
 
-$shadow: 0px 4px 20px 0px rgba(185, 176, 131, 0.35);
-$shadow_primary: 0px 7px 30px 0px rgba(205, 152, 123, 0.50);
+$shadow_primary: 0 15px 20px -10px rgba(0, 0, 0, 0.15);
+$shadow_green: 0 4px 20px 0 rgba(43, 136, 90, 0.6);
 $radius: 50%;
 $radius_sm: 8px;
 $border: 1px solid $outline;
-$trans: all .2s linear;
+$border_green: 1px solid $green_stroke;
+$trans: all 0.2s linear;
 
+$blur: blur(9.5px);

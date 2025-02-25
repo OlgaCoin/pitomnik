@@ -1,31 +1,66 @@
-@import 'libs/bootstrap-reboot.min';
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-@import 'base/variables';
-@import 'base/mixins';
-@import 'base/fonts';
+@import "libs/bootstrap-reboot.min";
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+@import "base/variables";
+@import "base/mixins";
+@import "base/fonts";
 
 /* Default styles */
 
+html {
+	overflow: auto;
+}
+html,
 body {
-	overflow-y:visible;
+	max-width: 100%;
+}
+body {
+	overflow: visible;
 	height: 100%;
 	margin: 0;
-	padding-right: 0!important;
+	padding-right: 0 !important;
 	background-color: $white;
-	color: $t_gray;
+	color: $t_primary;
 	font-weight: 400;
-	font-family: $f_sans;
-	font-size: 16px;
+	font-family: $f_primary;
+	font-size: 22px;
 	line-height: 1.5;
 }
-
-
-
-
-
-
-
-
-
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+button,
+button:active,
+button:focus {
+	border: none;
+	outline: none;
+}
+input:focus,
+textarea:focus {
+	outline: 0;
+}
+a,
+a:hover {
+	text-decoration: none;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+hr {
+	margin-bottom: 25px;
+	border-top: 1px solid $outline;
+	color: $outline;
+}
+strong {
+	font-weight: 700;
+}
 
 /* Blocks */
+
+@import "blocks/header";
+@import "blocks/nav";
+@import "blocks/social";
+@import "blocks/search";

@@ -1,0 +1,19 @@
+.social {
+	display: flex;
+	justify-content: end;
+	&__link {
+		@include flex;
+		margin-left: 16px;
+		transition: opacity .3s linear;
+		&:hover {
+			opacity: .7;
+		}
+	}
+	&__icon {
+		width: 26px;
+		height: 26px;
+		&--phone {
+			display: none;
+		}
+	}
+}
