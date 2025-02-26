@@ -1,0 +1,15 @@
+@media screen and (min-width: 800px) {
+	.custom-model-main:before {
+		content: "";
+		display: inline-block;
+		height: auto;
+		vertical-align: middle;
+		margin-right: -0px;
+		height: 100%;
+	}
+}
+@media screen and (max-width: 799px) {
+	.custom-model-inner {
+		margin-top: 45px;
+	}
+}

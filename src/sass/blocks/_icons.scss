@@ -1,0 +1,236 @@
+.icon-chevron-down:before {
+	content: "\e900";
+}
+.icon-chevron-left:before {
+	content: "\e901";
+}
+.icon-chevron-left-double:before {
+	content: "\e902";
+}
+.icon-chevron-right:before {
+	content: "\e903";
+}
+.icon-chevron-right-double:before {
+	content: "\e904";
+}
+.icon-chevron-up:before {
+	content: "\e905";
+}
+.icon-icon_arrow-left:before {
+	content: "\e906";
+}
+.icon-icon_arrow-right:before {
+	content: "\e907";
+}
+.icon-icon_book:before {
+	content: "\e909";
+	color: #464a48;
+}
+.icon-icon_branch:before {
+	content: "\e90a";
+	color: #464a48;
+}
+.icon-icon_cart:before {
+	content: "\e90b";
+}
+.icon-icon_cereals:before {
+	content: "\e90c";
+	color: #464a48;
+}
+.icon-icon_check .path1:before {
+	content: "\e90d";
+	color: rgb(0, 0, 0);
+}
+.icon-icon_check .path2:before {
+	content: "\e90e";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-icon_close:before {
+	content: "\e90f";
+}
+.icon-Icon_delivery:before {
+	content: "\e910";
+}
+.icon-icon_dnld:before {
+	content: "\e911";
+}
+.icon-icon_flame:before {
+	content: "\e912";
+}
+.icon-icon_grid:before {
+	content: "\e913";
+	color: #464a48;
+}
+.icon-icon_leaf:before {
+	content: "\e914";
+	color: #464a48;
+}
+.icon-icon_link .path1:before {
+	content: "\e915";
+	color: rgb(51, 153, 103);
+}
+.icon-icon_link .path2:before {
+	content: "\e916";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-icon_menu:before {
+	content: "\e917";
+	font-size: 23px;
+}
+.icon-icon_ok .path1:before {
+	content: "\e918";
+	color: rgb(255, 152, 0);
+}
+.icon-icon_ok .path2:before {
+	content: "\e919";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-icon_ok .path3:before {
+	content: "\e91a";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-icon_onion:before {
+	content: "\e91b";
+	color: #464a48;
+}
+.icon-icon_pear:before {
+	content: "\e91c";
+	color: #464a48;
+}
+.icon-icon_play:before {
+	content: "\e91d";
+}
+.icon-icon_poppy:before {
+	content: "\e91e";
+	color: #464a48;
+}
+.icon-icon_printer:before {
+	content: "\e91f";
+}
+.icon-icon_quote:before {
+	content: "\e920";
+}
+.icon-icon_reload:before {
+	content: "\e921";
+}
+.icon-icon_rose:before {
+	content: "\e922";
+	color: #464a48;
+}
+.icon-icon_search:before {
+	content: "\e923";
+	color: $white;
+}
+.icon-icon_tg .path1:before {
+	content: "\e924";
+	color: rgb(3, 155, 229);
+}
+.icon-icon_tg .path2:before {
+	content: "\e925";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-icon_trash:before {
+	content: "\e926";
+}
+.icon-icon_twitter .path1:before {
+	content: "\e927";
+	color: rgb(85, 172, 238);
+}
+.icon-icon_twitter .path2:before {
+	content: "\e928";
+	margin-left: -1em;
+	color: rgb(241, 242, 242);
+}
+.icon-icon_vine:before {
+	content: "\e929";
+	color: #464a48;
+}
+.icon-icon_vk .path1:before {
+	content: "\e92a";
+	color: rgb(64, 101, 214);
+}
+.icon-icon_vk .path2:before {
+	content: "\e92b";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-icon_wa .path1:before {
+	content: "\e92c";
+	color: rgb(76, 175, 80);
+}
+.icon-icon_wa .path2:before {
+	content: "\e92d";
+	margin-left: -1em;
+	color: rgb(250, 250, 250);
+}
+.icon-icon_zoom:before {
+	content: "\e92e";
+}
+.icon-icon-phone .path1:before {
+	content: "\e92f";
+	color: rgb(0, 0, 0);
+}
+.icon-icon-phone .path2:before {
+	content: "\e930";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-icon-phone .path3:before {
+	content: "\e931";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-icon-phone .path4:before {
+	content: "\e932";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-icon-pin .path1:before {
+	content: "\e933";
+	color: rgb(255, 255, 255);
+}
+.icon-icon-pin .path2:before {
+	content: "\e934";
+	margin-left: -0.765625em;
+	color: rgb(0, 0, 0);
+}
+.icon-icon-pin .path3:before {
+	content: "\e935";
+	margin-left: -0.765625em;
+	color: rgb(0, 0, 0);
+}
+
+.icon--left {
+	margin-right: 8px;
+}
+.cart {
+	&__wrapper {
+		position: relative;
+		display: block;
+		& i {
+			font-size: 30px;
+			color: $t_dark;
+		}
+		& .cart__num {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			width: 22px;
+			height: 22px;
+			background: $green_primary;
+			border-radius: 50%;
+			top: -10px;
+			right: -8px;
+			color: #fff;
+			font-family: $f_titles;
+			font-size: 14px;
+			font-weight: 600;
+		}
+	}
+}

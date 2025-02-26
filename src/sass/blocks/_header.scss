@@ -57,3 +57,26 @@
 		}
 	}
 }
+.contacts__block {
+	display: inline-flex;
+	gap: 40px;
+	& .phone {
+		font-family: $f_titles;
+		font-weight: 600;
+		font-size: 17px;
+		color: $t_titles;
+		transition: $trans;
+		&:hover {
+			color: $green;
+		}
+	}
+	& .callback {
+		font-weight: 500;
+		font-size: 17px;
+		color: $green;
+		transition: $trans;
+		&:hover {
+			color: $green_primary;
+		}
+	}
+}

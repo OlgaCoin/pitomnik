@@ -65,7 +65,15 @@ strong {
 
 /* Blocks */
 
+@import "blocks/forms";
 @import "blocks/header";
 @import "blocks/nav";
 @import "blocks/social";
 @import "blocks/search";
+@import "blocks/icons";
+@import "blocks/popups";
+@import "blocks/buttons";
+
+
+
+@import "blocks/media";

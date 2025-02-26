@@ -124,21 +124,26 @@
 								</ul>
 							</nav> -->
 						</div>
-						<div class="header__top-item">
-							<div class="social">
+						<div class="header__top-item contacts__block">
+							<a href="tel:+74954800769" class="phone contacts__block-item">
+								8 (495) 480-07-69
+							</a>
+							<a href="#" class="click-here callback contacts__block-item">Заказать
+								звонок</a>
+							<div class="social contacts__block-item">
 								<a class="social__link" href="#" target="_blank">
 									<svg class="social__icon social__icon--wa">
 										<use xlink:href="#wa-top"></use>
 									</svg>
 								</a>
 
-								<a class="social__link" href="https://t.me/fsk_today" target="_blank">
+								<a class="social__link" href="#" target="_blank">
 									<svg class="social__icon social__icon--tg">
 										<use xlink:href="#tg-top"></use>
 									</svg>
 								</a>
 
-								<a class="social__link" href="https://ok.ru/fondsk" target="_blank">
+								<a class="social__link" href="tel:+74954800769" target="_blank">
 									<svg class="social__icon social__icon--phone">
 										<use xlink:href="#phone-top"></use>
 									</svg>
@@ -156,15 +161,26 @@
 						<a class="header__logo" href="index.html">
 							<img src="icons/logo_lg.svg" alt="logo">
 						</a>
+
+						<a class="btn btn--catalog btn--md" href="catalog.html">
+							<i class="icon-icon_menu icon--left"></i>
+							Каталог</button>
+						</a>
+
 						<div class="header__search search">
 							<form class="search-form" action="/search" method="get">
-								<input type="text" placeholder="Поиск по каталогу" class="search-form__input" name="q">
+								<input type="text" placeholder="Искать в каталоге..." class="search-form__input" name="q">
 								<button type="submit" class="search-form__submit">
-									<svg class="search-form__icon">
-										<use xlink:href="#search"></use>
-									</svg>
+									<i class="icon-icon_search"></i>
 								</button>
 							</form>
+						</div>
+
+						<div class="cart">
+							<a href="order.html" class="cart__wrapper" title="Перейти в корзину">
+								<i class="icon-icon_cart"></i>
+								<div class="cart__num" id="cart_num">2</div>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -173,6 +189,36 @@
 
 
 		</header>
+
+		<div class="custom-model-main">
+			<div class="custom-model-inner">
+				<div class="close-btn">
+					<i class="icon-icon_close"></i>
+				</div>
+				<div class="custom-model-wrap">
+					<div class="popup pop-up-content-wrap">
+
+						<form class="callback-form" action="/" method="post">
+							<div class="callback-form__header">
+								<h3 class="popup__header">Обратный звонок</h3>
+								<p class="popup__descr">Закажите обратный звонок <br>и мы вам обязательно перезвоним!</p>
+							</div>
+							<input type="text" name="name" placeholder="Ваше имя" type="text" autocomplete="on" required>
+							<input type="tel" name="phone" placeholder="Ваш телефон" autocomplete="on" required>
+							<button class="btn btn--lg btn--green" type="submit">Заказать звонок</button>
+							<div class="callback-form__notice">
+								Нажимая на кнопку "Заказать звонок", вы даете согласие c <a href="#">Политикой обработки
+									персональных данных</a>.
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="bg-overlay"></div>
+		</div>
+
+
+
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
