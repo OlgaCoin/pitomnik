@@ -57,10 +57,23 @@ hr {
 strong {
 	font-weight: 700;
 }
-
-
-.page {
-	height: 2000px;
+.section {
+	padding: 90px 0 70px;
+	&__header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		&--center {
+			justify-content: center;
+		}
+	}
+	&__title {
+		@include h-2;
+		margin-bottom: 60px;
+		& .h-caps {
+			text-transform: uppercase;
+		}
+	}
 }
 
 /* Blocks */
@@ -73,7 +86,11 @@ strong {
 @import "blocks/icons";
 @import "blocks/popups";
 @import "blocks/buttons";
-
-
+@import "blocks/promo";
+@import "blocks/sliders";
+@import "blocks/cards";
+@import "blocks/counter";
+@import "blocks/badges";
+@import "blocks/catalog";
 
 @import "blocks/media";

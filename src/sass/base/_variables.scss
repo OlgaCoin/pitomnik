@@ -13,7 +13,7 @@ $t_titles: #464a48;
 $t_primary: #6c766a;
 $t_light: #9e9c9c;
 
-$gradient_primary: linear-gradient(to right, var(--green_primary), #1cae4d);
+$gradient_primary: linear-gradient(to right, $green_primary, #1cae4d);
 $gradient_hover: linear-gradient(90deg, rgba(51, 153, 103, 0.8) 0%, rgba(28, 174, 77, 0.8) 100%);
 $gradient_cta: linear-gradient(254deg, #ddece5 0%, #eff6f3 93.68%),
 	linear-gradient(319deg, rgba(221, 236, 229, 0.5) 0%, rgba(244, 251, 248, 0.5) 80.64%);
@@ -28,7 +28,8 @@ $shadow_green: 0 4px 20px 0 rgba(43, 136, 90, 0.6);
 $radius: 50%;
 $radius_sm: 8px;
 $border: 1px solid $outline;
-$border_green: 1px solid $green_stroke;
+$border_green: 1px solid $green;
+$border_l-green: 1px solid $green_stroke;
 $trans: all 0.3s linear;
 
 $blur: blur(9.5px);

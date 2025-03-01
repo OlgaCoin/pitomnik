@@ -1,0 +1,58 @@
+.counter {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: $border;
+	border-radius: $radius_sm;
+	background-color: #fbfbfb;
+	width: auto;
+	height: 52px;
+	padding: 0 5px;
+	&__line {
+		height: 100%;
+		width: 1px;
+		background-color: $outline;
+		margin: 0 5px;
+	}
+	&__minus,
+	&__plus {
+		outline: none;
+		border: none;
+		font-size: 22px;
+		font-family: $f_titles;
+		font-weight: 600;
+		color: $t_titles;
+		transition: $trans;
+		background-color: #fbfbfb;
+		text-align: center;
+		&:hover,
+		&:focus,
+		&:active {
+			outline: none;
+		}
+	}
+	&__plus {
+		font-size: 25px;
+	}
+	&__box {
+		width: 26px;
+		height: 26px;
+		margin: 0 5px 5px;
+	}
+}
+input.counter__input {
+	max-width: 100%;
+	background-color: #fbfbfb;
+	text-align: center;
+	outline: none;
+	border: none;
+	box-shadow: none;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 26px;
+	color: $t_titles;
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		appearance: none;
+	}
+}

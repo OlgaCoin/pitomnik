@@ -1,0 +1,37 @@
+.section-catalog {
+	&__content {
+		display: flex;
+		justify-content: start;
+		flex-wrap: wrap;
+		align-items: start;
+		row-gap: 24px;
+	}
+	&__img {
+		overflow: hidden;
+		width: 100%;
+		height: 236px;
+		border-radius: $radius_sm;
+		display: block;
+		margin-bottom: 18px;
+		& > img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__title {
+		& a {
+			font-family: $f_titles;
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 125%;
+			text-align: center;
+			color: $t_titles;
+			transition: $trans;
+			&:hover {
+				color: $green;
+			}
+		}
+
+	}
+}

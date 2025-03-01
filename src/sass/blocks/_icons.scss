@@ -39,7 +39,7 @@
 }
 .icon-icon_check .path1:before {
 	content: "\e90d";
-	color: rgb(0, 0, 0);
+	color: $gradient_primary;
 }
 .icon-icon_check .path2:before {
 	content: "\e90e";
@@ -54,6 +54,7 @@
 }
 .icon-icon_dnld:before {
 	content: "\e911";
+	font-size: 24px;
 }
 .icon-icon_flame:before {
 	content: "\e912";
@@ -208,6 +209,9 @@
 .icon--left {
 	margin-right: 8px;
 }
+.icon--right {
+	margin-left: 10px;
+}
 .cart {
 	&__wrapper {
 		position: relative;
@@ -223,7 +227,7 @@
 			position: absolute;
 			width: 22px;
 			height: 22px;
-			background: $green_primary;
+			background: $gradient_primary;
 			border-radius: 50%;
 			top: -10px;
 			right: -8px;

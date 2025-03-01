@@ -2,10 +2,10 @@
 	width: 100%;
 	background-color: #fff;
 	position: relative;
-	z-index: 1000;
+	z-index: 2000;
 	&__top {
 		min-height: 60px;
-		border-bottom: $border_green;
+		border-bottom: $border_l-green;
 		display: flex;
 		align-items: center;
 		&-wrapper {
@@ -20,19 +20,20 @@
 		align-items: center;
 		background-color: #fff;
 		height: 96px;
-		box-shadow: $shadow_primary;
+		box-shadow: none;
 		background-color: $bg;
 		position: relative;
-		z-index: 2;
 		transition: $trans;
+		z-index: 2000;
 		&-wrapper {
 			@include flex;
 		}
 		&.fixed {
 			position: fixed;
-			top: 0;
+			box-shadow: $shadow_primary;
 			left: 0;
 			width: 100%;
+			top: -100%;
 		}
 	}
 	&__logo {

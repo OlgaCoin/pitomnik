@@ -28,10 +28,48 @@
 			box-shadow: none;
 		}
 	}
+	&--stroke {
+		border: 2px solid #fff;
+	}
+	&--g-stroke {
+		border: $border_green;
+		color: $green;
+		&:hover {
+			color: $green;
+			& .icon--right {
+				transform: translateX(5px);
+				transition: $trans;
+			}
+		}
+	}
 	&--catalog {
 		background-color: $green;
 		&:hover {
-			opacity: .8;
+			opacity: 0.8;
 		}
+	}
+	&--tocart {
+		font-size: 22px;
+		background: linear-gradient(90deg, #339967 0%, #1cae4d 100%);
+		&.active {
+			font-weight: 600;
+			background: #e9f5e9;
+			color: $green;
+			&:hover {
+				opacity: 1;
+			}
+		}
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+	&--prev,
+	&--next {
+		color: $white;
+		border-radius: $radius_sm;
+		width: 40px;
+		height: 40px;
+		border: none;
+		background: $gradient_primary;
 	}
 }
