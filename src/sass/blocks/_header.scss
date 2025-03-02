@@ -15,6 +15,11 @@
 			@include flex;
 		}
 	}
+	& .social__link {
+		&:nth-child(3) {
+			display: none;
+		}
+	}
 	&__bottom {
 		display: flex;
 		align-items: center;
@@ -57,6 +62,9 @@
 			transition: all 0.3s;
 		}
 	}
+	&__cart {
+		margin-right: 8px;
+	}
 }
 .contacts__block {
 	display: inline-flex;
@@ -81,3 +89,4 @@
 		}
 	}
 }
+

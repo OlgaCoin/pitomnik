@@ -1,0 +1,64 @@
+.section {
+	padding: 90px 0 70px;
+	&__header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		&--center {
+			justify-content: center;
+		}
+	}
+	&__title {
+		@include h-2;
+		margin-bottom: 60px;
+		& .h-caps {
+			text-transform: uppercase;
+		}
+	}
+	&__descr {
+		@include p1-bold;
+		padding-left: 30px;
+		border-left: 8px solid $green_primary;
+		margin-bottom: 65px;
+	}
+	&__content {
+		margin-bottom: 90px;
+	}
+	&__img {
+		border-radius: $radius_sm;
+		width: 100%;
+		height: auto;
+	}
+}
+
+//promo
+.promo {
+	&__buttons {
+		display: flex;
+		justify-content: start;
+		align-items: start;
+		gap: 40px;
+	}
+}
+
+//malahit
+.benefits {
+	margin-top: 45px;
+	&__item {
+		display: flex;
+		justify-content: start;
+		align-items: flex-start;
+		gap: 64px;
+		padding: 30px 10px 30px 0;
+	}
+	&__icon {
+		min-width: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	&__title {
+		@include h-4;
+		margin-bottom: 20px;
+	}
+}

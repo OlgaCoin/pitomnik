@@ -42,6 +42,10 @@
 			}
 		}
 	}
+	&--lone {
+		display: inline-flex;
+		justify-content: start;
+	}
 	&--catalog {
 		background-color: $green;
 		&:hover {

@@ -12,9 +12,9 @@ html {
 html,
 body {
 	max-width: 100%;
+	overflow-x: hidden;
 }
 body {
-	overflow: visible;
 	height: 100%;
 	margin: 0;
 	padding-right: 0 !important;
@@ -55,26 +55,13 @@ hr {
 	color: $outline;
 }
 strong {
-	font-weight: 700;
+	font-weight: 600;
 }
-.section {
-	padding: 90px 0 70px;
-	&__header {
-		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-		&--center {
-			justify-content: center;
-		}
-	}
-	&__title {
-		@include h-2;
-		margin-bottom: 60px;
-		& .h-caps {
-			text-transform: uppercase;
-		}
-	}
+.italic {
+	font-weight: 600;
+	font-style: italic;
 }
+
 
 /* Blocks */
 
@@ -86,11 +73,10 @@ strong {
 @import "blocks/icons";
 @import "blocks/popups";
 @import "blocks/buttons";
-@import "blocks/promo";
+@import "blocks/sections";
 @import "blocks/sliders";
 @import "blocks/cards";
 @import "blocks/counter";
 @import "blocks/badges";
-@import "blocks/catalog";
 
 @import "blocks/media";
