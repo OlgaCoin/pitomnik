@@ -28,8 +28,8 @@
 		& .btn {
 			opacity: 0;
 			position: absolute;
-			top: 50%;  
-			left: 50%; 	  
+			top: 50%;
+			left: 50%;
 			transform: translate(-50%, -50%);
 			border: 1px solid $white;
 			background: transparent;
@@ -141,6 +141,48 @@
 					color: $green;
 				}
 			}
+		}
+	}
+	&-areas {
+		padding: 0;
+		display: block;
+		overflow: hidden;
+		margin: 0 12px;
+		border-radius: 8px 8px 0 0;
+		&__header {
+			position: relative;
+			height: 378px;
+			transition: $trans;
+			&:hover .card-areas__content {
+				opacity: 1;
+			}
+		}
+		&__img {
+			border-radius: 8px 8px 0 0;
+			height: 100%;
+			&:hover img {
+				filter: none;
+			}
+		}
+		&__title {
+			@include h-5;
+			padding: 20px 15px 25px;
+			text-align: center;
+			& h5 {
+				display: inline-block;
+			}
+		}
+		&__content {
+			@include p2-med;
+			padding: 32px;
+			background-color: $bg;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			transition: all 0.5s linear;
 		}
 	}
 }

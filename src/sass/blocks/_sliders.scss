@@ -1,9 +1,9 @@
 // top slider
 
 .top-slider {
-	&--items {
-		overflow: hidden;
-	}
+	// &--items {
+	// 	overflow: hidden;
+	// }
 	&__item {
 		padding-top: 150px;
 		background-position: center center;
@@ -48,7 +48,35 @@
 		margin-right: 10px;
 	}
 	&__dots {
-		color: $white;
+		position: absolute;
+		top: 320px;
+		right: 35%;
+		z-index: 999;
+		& ul {
+			& li {
+				margin-bottom: 48px;
+				position: relative;
+				& button {
+					background-image: url("../icons/icon-check.svg");
+					font-size: 0;
+					width: 56px;
+					height: 56px;
+					background-color: transparent;
+				}
+				// & li.slick-active {
+				// 	& button {
+				// 		position: relative;
+				// 	}
+				// }
+			}
+			.progress-round__wrap {
+				position: absolute;
+				left: 0;
+				top: 0;
+				// transform: translate(-50%, -50%);
+			}
+		}
+
 		&-item {
 			display: flex;
 			justify-content: start;
@@ -130,12 +158,18 @@
 .sslider {
 	overflow: hidden;
 	width: calc(100% + 2px);
-	padding: 0 1px 15px;
+	padding: 0 1px 20px;
 	margin-left: -1px;
+	&.decor__slider {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
 	&__wrapper {
 		position: relative;
 	}
 	&__item {
+		position: relative;
 		&.banner {
 			overflow: hidden;
 			width: 100%;
@@ -157,12 +191,93 @@
 		& .btn--next {
 			position: absolute;
 			top: 50%;
+			transform: translateY(-50%);
+			&--rt {
+				top: 0;
+				transform: none;
+				z-index: 999;
+			}
 		}
 		& .btn--prev {
 			left: -70px;
+			&--rt {
+				left: calc(100% - 85px);
+			}
 		}
 		& .btn--next {
 			right: -70px;
+			&--rt {
+				right: 0;
+			}
 		}
 	}
+	&__bg {
+		overflow: hidden;
+		height: 644px;
+		width: 100%;
+		display: block;
+		& > img {
+			border-radius: $radius_sm;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__tblock {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 50%;
+		background-color: $bg;
+		box-shadow: $shadow_primary;
+		padding: 80px;
+		& > img {
+			display: none;
+		}
+		& > h3 {
+			@include h-3;
+		}
+		& > a {
+			font-style: italic;
+			font-weight: 500;
+			font-size: 24px;
+			color: $t_primary;
+			margin-bottom: 34px;
+			transition: $trans;
+			display: flex;
+			justify-content: start;
+			align-items: center;
+			&:hover {
+				color: $green;
+			}
+		}
+	}
+	&__text {
+		font-size: 20px;
+		line-height: 140%;
+	}
+	&.areas__slider .slick-list {
+		margin: 0 -12px;
+	}
 }
+
+.slides-numbers {
+	color: $t_titles;
+	display: none;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	font-family: $f_titles;	
+	font-size: 30px;
+	font-weight: 600;
+
+	.total {
+		font-size: 24px;
+		font-weight: 500;
+	}
+}
+

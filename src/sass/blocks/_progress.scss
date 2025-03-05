@@ -1,0 +1,15 @@
+.progress-round {
+	width: 56px;
+	height: 56px;
+	transform: rotate(-90deg);
+
+	// &__wrap {
+	// 	display: none;
+	// }
+
+	circle {
+		fill: transparent;
+		stroke: white;
+		stroke-width: 2;
+	}
+}
