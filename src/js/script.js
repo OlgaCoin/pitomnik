@@ -388,7 +388,7 @@ $(document).ready(function () {
 	}
 	inputNumber($('.counter__input'));
 
-
+//высота блоков в gallery
 	var mh = 0;
 	$(".section-gallery__item").each(function () {
 		var h_block = parseInt($(this).height());
