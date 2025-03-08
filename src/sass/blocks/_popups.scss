@@ -1,4 +1,4 @@
-.custom-model-main {
+.modal-main {
 	text-align: center;
 	overflow: hidden;
 	position: fixed;
@@ -11,7 +11,7 @@
 	opacity: 0;
 	transition:
 		opacity 0.15s linear,
-		z-index 0.15;
+		z-index 0.15s;
 	z-index: -1;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -22,12 +22,11 @@
 	opacity: 1;
 	overflow: hidden;
 }
-.custom-model-inner {
+.modal-inner {
 	transform: translate(0, -25%);
 	transition: -webkit-transform 0.3s ease-out;
 	transition: transform 0.3s ease-out;
-	transition:
-		transform 0.3s ease-out,
+	transition: transform 0.3s ease-out,
 		-webkit-transform 0.3s ease-out;
 	display: inline-block;
 	vertical-align: middle;
@@ -35,7 +34,7 @@
 	margin: 30px auto;
 	max-width: 97%;
 }
-.custom-model-wrap {
+.modal-wrapper {
 	display: block;
 	width: 100%;
 	position: relative;
@@ -49,7 +48,7 @@
 	max-height: calc(100vh - 70px);
 	overflow-y: auto;
 }
-.model-open .custom-model-inner {
+.model-open .modal-inner {
 	transform: translate(0, 0);
 	position: relative;
 	z-index: 999;
@@ -88,4 +87,3 @@
 		@include p2-reg;
 	}
 }
-

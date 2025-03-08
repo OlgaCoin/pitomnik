@@ -1,5 +1,5 @@
 @media screen and (min-width: 800px) {
-	.custom-model-main:before {
+	.modal-main:before {
 		content: "";
 		display: inline-block;
 		height: auto;
@@ -9,7 +9,7 @@
 	}
 }
 @media screen and (max-width: 799px) {
-	.custom-model-inner {
+	.modal-inner {
 		margin-top: 45px;
 	}
 }

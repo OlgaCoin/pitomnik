@@ -339,6 +339,13 @@
 			}
 		}
 	}
+	&-projects {
+		padding: 0;
+		& h3 {
+			margin-bottom: 65px;
+			@include h-3;
+		}
+	}
 }
 
 //promo
