@@ -346,6 +346,37 @@
 			@include h-3;
 		}
 	}
+	&-blog {
+		&__item {	
+			display: block;
+			color: $t_primary;		
+
+		&__img {
+			overflow: hidden;
+			width: 216px;
+			height: 140px;
+			& > img {
+				border-radius: $radius_sm;
+				overflow: hidden;
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		&--lg {
+
+			position: relative;
+			
+			& .section-blog__descr {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+			}
+		}
+	}
+	}
 }
 
 //promo

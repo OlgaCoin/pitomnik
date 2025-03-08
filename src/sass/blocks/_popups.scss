@@ -26,7 +26,8 @@
 	transform: translate(0, -25%);
 	transition: -webkit-transform 0.3s ease-out;
 	transition: transform 0.3s ease-out;
-	transition: transform 0.3s ease-out,
+	transition:
+		transform 0.3s ease-out,
 		-webkit-transform 0.3s ease-out;
 	display: inline-block;
 	vertical-align: middle;
@@ -86,4 +87,70 @@
 	&__descr {
 		@include p2-reg;
 	}
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: 5000;
+	&.active {
+		display: block;
+	}
+	&-slider {		
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		max-width: 1200px;
+		&__img {
+			height: 100vh;
+			width: 100%;
+			& > img {
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		& .slick-list {
+			overflow: hidden;
+		}
+		&__prev,
+		&__next {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 1;
+			width: 60px;
+			height: 52px;
+			border: none;
+			border-radius: $radius_sm;
+			transition: $trans;
+			backdrop-filter: $blur;
+			background: rgba(255, 255, 255, 0.15);
+			color: white;
+		}
+		&__prev {
+			left: 35px;
+		}
+		&__next {
+			right: 35px;
+		}
+		&:focus,
+		&:active {
+			border: none;
+		}
+	}
+}
+.close-btn.close-modal {
+	position: absolute;
+	right: 25px;
+	top: 25px;
+	z-index: 1001;
+	color: #000;
 }
