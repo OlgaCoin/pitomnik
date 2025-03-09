@@ -347,35 +347,73 @@
 		}
 	}
 	&-blog {
-		&__item {	
-			display: block;
-			color: $t_primary;		
-
+		&__item {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+			gap: 20px;
+			color: $t_primary;
+			margin-bottom: 25px;
+			border: $border;
+			transition: $trans;
+			&:hover {
+				color: $t_primary;
+			}
+			&:hover h4,
+			&:hover h5 {
+				color: $green;
+			}
+			&--lg {
+				width: 100%;
+				height: 470px;
+				display: block;
+				position: relative;
+				&:hover {
+					color: $white;
+				}
+				&:hover h4,
+				&:hover h5 {
+					color: $white;
+				}
+				& .section-blog__img {
+					width: 100%;
+					height: 100%;
+				}
+				& .section-blog__descr {
+					position: absolute;
+					left: 34px;
+					top: 24px;
+					right: 0;
+					bottom: 0;
+					color: $white;
+					& h4 {
+						@include h-4;
+						color: $white;
+					}
+					& p {
+						display: none;
+					}
+				}
+			}
+		}
 		&__img {
 			overflow: hidden;
-			width: 216px;
+			width: 30%;
 			height: 140px;
+			flex-shrink: 0;
 			& > img {
 				border-radius: $radius_sm;
-				overflow: hidden;
 				object-fit: cover;
 				width: 100%;
 				height: 100%;
 			}
 		}
-		&--lg {
-
-			position: relative;
-			
-			& .section-blog__descr {
-				position: absolute;
-				left: 0;
-				top: 0;
-				right: 0;
-				bottom: 0;
+		&__descr {
+			@include p3-reg;
+			& h5 {
+				@include h-5;
 			}
 		}
-	}
 	}
 }
 

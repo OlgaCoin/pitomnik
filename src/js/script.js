@@ -441,12 +441,6 @@ $(document).ready(function () {
 	// });
 
 
-
-
-
-
-
-
 	// product counter
 	function inputNumber(e) {
 
@@ -509,9 +503,6 @@ $(document).ready(function () {
 	document.getElementById('video').onended = function () {
 		document.getElementById('play_button').style.display = 'block';
 	}
-
-
-
 
 
 
