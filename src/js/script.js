@@ -594,6 +594,14 @@ $(document).ready(function () {
 		document.getElementById('play_button1').style.display = 'block';
 	}
 
+	document.getElementById('play_button2').addEventListener('click', function () {
+		document.getElementById('video2').play();
+		document.getElementById('play_button1').style.display = 'none';
+	});
+	document.getElementById('video2').onended = function () {
+		document.getElementById('play_button1').style.display = 'block';
+	}
+
 
 
 
