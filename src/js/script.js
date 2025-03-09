@@ -277,17 +277,57 @@ $(document).ready(function () {
 			});
 
 			if ($(this).find('.item').length > 1) {
-				$(this).siblings('.slides-numbers').show();
+				$(this).siblings('.slides-numbers--d').show();
 			}
 
 			$(this).on('afterChange', function (event, slick, currentSlide) {
-				$sliderParent.find('.slides-numbers .active').html(helpers.addZeros(currentSlide + 1));
+				$sliderParent.find('.slides-numbers--d .active').html(helpers.addZeros(currentSlide + 1));
 			});
 
 			var sliderItemsNum = $(this).find('.slick-slide').not('.slick-cloned').length;
-			$sliderParent.find('.slides-numbers .total').html(helpers.addZeros(sliderItemsNum));
+			$sliderParent.find('.slides-numbers--d .total').html(helpers.addZeros(sliderItemsNum));
 
 		});
+
+		//feedback slider
+
+		function sliderInit() {
+			var $slider = $('.feedback__slider');
+			$slider.each(function () {
+				var $sliderParent = $(this).parent();
+				$(this).slick({
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					dots: false,
+					infinite: true,
+					fade: true,
+					prevArrow: $('.f-prev'),
+					nextArrow: $('.f-next'),
+					responsive: [
+						{
+							breakpoint: 767,
+							settings: {
+								adaptiveHeight: true
+							}
+						}
+					]
+				});
+
+				if ($(this).find('.item').length > 1) {
+					$(this).siblings('.slides-numbers--f').show();
+				}
+
+				$(this).on('afterChange', function (event, slick, currentSlide) {
+					$sliderParent.find('.slides-numbers--f .active').html(helpers.addZeros(currentSlide + 1));
+				});
+
+				var sliderItemsNum = $(this).find('.slick-slide').not('.slick-cloned').length;
+				$sliderParent.find('.slides-numbers--f .total').html(helpers.addZeros(sliderItemsNum));
+
+			});
+		};
+
+		sliderInit();
 
 		//   $('.slick-next').on('click', function () {
 		//     console.log('test');
@@ -481,6 +521,8 @@ $(document).ready(function () {
 	});
 
 
+
+
 	// product counter
 	function inputNumber(e) {
 
@@ -542,6 +584,14 @@ $(document).ready(function () {
 	});
 	document.getElementById('video').onended = function () {
 		document.getElementById('play_button').style.display = 'block';
+	}
+
+	document.getElementById('play_button1').addEventListener('click', function () {
+		document.getElementById('video1').play();
+		document.getElementById('play_button1').style.display = 'none';
+	});
+	document.getElementById('video1').onended = function () {
+		document.getElementById('play_button1').style.display = 'block';
 	}
 
 

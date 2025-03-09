@@ -235,6 +235,7 @@
 		background-color: $bg;
 		box-shadow: $shadow_primary;
 		padding: 80px;
+		z-index: 2;
 		& > img {
 			display: none;
 		}
@@ -254,6 +255,20 @@
 			&:hover {
 				color: $green;
 			}
+		}
+		& .about {
+			font-style: italic;
+			font-weight: 500;
+			font-size: 24px;
+			color: $t_primary;
+			margin-bottom: 34px;
+		}
+		&--feed {
+			background-image: url("../icons/quote.svg");
+			background-repeat: no-repeat;
+			background-size: 95px 72px;
+			background-position: 42px 62px;
+			
 		}
 	}
 	&__text {
