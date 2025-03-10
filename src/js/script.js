@@ -43,7 +43,6 @@ $(document).ready(function () {
 		$(".modal-main").removeClass('model-open');
 	});
 
-
 	// slick
 
 	var time = 5;
@@ -161,10 +160,31 @@ $(document).ready(function () {
 		reset = 0;
 	});
 
-	// $('.top-slider__dots .top-slider__dots-item').click(function () {
-	// 	var $this = $(this);
-	// 	$('.top-slider--for').slick('slickGoTo', $this.data('index'))
+
+	// // $('.top-slider').slick({
+	// $slick = $('.top-slider')
+	// $slick.slick({
+	// 	slidesToShow: 1,
+	// 	slidesToScroll: 1,
+	// 	arrows: true,
+	// 	dots: true,
+	// 	// fade: true,
+	// 	infinite: true,
+	// 	speed: 300,
+	// 	pauseOnDotsHover: true,
+	// 	// autoplay: true,
+	// 	// autoplaySpeed: 6000,
+	// 	appendDots: $(".top-slider__dots"),
+	// 	prevArrow: $(".top-slider__prev"),
+	// 	nextArrow: $(".top-slider__next"),
+	// 	// speed: 1500,
+	// 	// pauseOnFocus: false,
+	// 	// pauseOnHover: false,
+
 	// });
+
+
+
 
 
 	// trend slider
