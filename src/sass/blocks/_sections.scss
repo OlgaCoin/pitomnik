@@ -42,6 +42,7 @@
 			width: calc(25% - 4px);
 			border-radius: $radius_sm;
 			overflow: hidden;
+			min-height: 320px;
 			&--img {
 				& > img {
 					object-fit: cover;
