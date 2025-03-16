@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 	// sticky menu + toTop
+
 	let menuElem = $('.header__bottom'), // Элемент который будет прилепать
 		menuFixed = 60, // кол-во пикселей от границы, когда меню "прилипнет" к краю экрана.
 		menuStatus = false; // Некая оптимизация.
@@ -16,23 +17,16 @@ $(document).ready(function () {
 				menuElem.removeAttr('style').removeClass('fixed');
 			});
 		}
+		if ($(this).scrollTop() >= 6000) {
+			$('.to-top').addClass('show');
+		} else {
+			$('.to-top').removeClass('show');
+		}
 	});
 
-	// $(window).scroll(function () {
-
-	// 	if ($(this).scrollTop() >= 60) {
-	// 		$('.header__bottom').addClass('fixed');
-	// 	} else {
-	// 		$('.header__bottom').removeClass('fixed');
-	// 	}
-
-	// 	if ($(this).scrollTop() >= 3000) {
-	// 		$('.toTop').addClass('show');
-	// 	} else {
-	// 		$('.toTop').removeClass('show');
-	// 	}
-	// });
-
+	$('.to-top').click(function () {
+		$('html').animate({ scrollTop: 0 }, 1000);
+	});
 
 	// popup
 
@@ -43,149 +37,110 @@ $(document).ready(function () {
 		$(".modal-main").removeClass('model-open');
 	});
 
-	// slick
+	// top-slider
 
-	var time = 5;
-	var reset,
-		$slick,
-		isPause,
-		tick,
-		percentTime;
+	jQuery(function () {
+		// Основной элемент слайдера
+		const $topSlider = $(".top-slider");
+		// Контейнер для точек навигации
+		const $topSliderDots = $(".top-slider__dots");
+		// Скорость анимации перехода между слайдами (миллисекунды)
+		const ANIMATION_SPEED = 1500;
+		// Интервал автоматического переключения слайдов (миллисекунды)
+		const AUTOPLAY_SPEED = 6000;
 
-	var $cirleProcess = "<div class=\"progress-round__wrap\">\n" +
-		"        <svg class=\"progress-round\">\n" +
-		"            <circle r=\"26\" cx=\"28\" cy=\"28\"/>\n" +
-		"        </svg>\n" +
-		"    </div>";
+		/**
+		 * @type {import("slick-carousel")}
+		 * Инициализация slick-слайдера с параметрами
+		 */
+		$topSlider.slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: true,
+			dots: true,
+			fade: true,
+			autoplay: true,
+			autoplaySpeed: AUTOPLAY_SPEED,
+			appendDots: $topSliderDots,
+			prevArrow: $(".top-slider__prev"),
+			nextArrow: $(".top-slider__next"),
+			speed: ANIMATION_SPEED,
+			pauseOnFocus: false,
+			pauseOnHover: false,
+		});
 
-	// $('.top-slider').slick({
-	$slick = $('.top-slider')
-	$slick.slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: true,
-		dots: true,
-		// fade: true,
-		infinite: true,
-		speed: 300,
-		pauseOnDotsHover: true,
-		// autoplay: true,
-		// autoplaySpeed: 6000,
-		appendDots: $(".top-slider__dots"),
-		prevArrow: $(".top-slider__prev"),
-		nextArrow: $(".top-slider__next"),
-		// speed: 1500,
-		// pauseOnFocus: false,
-		// pauseOnHover: false,
+		// Класс CSS для активного элемента
+		const activeClass = "slick-active";
+		// ARIA-атрибут для управления видимостью для скринридеров
+		const ariaAttribute = "aria-hidden";
 
-	});
+		/**
+		 * SVG-разметка для индикатора прогресса
+		 * Отображает круговой таймер, показывающий время до следующего слайда
+		 */
+		const PROGRESS_SVG = `
+		<svg class="progress-svg" width="56" height="56">
+			<g transform="translate(28,28)">
+				<circle class="circle-go" r="26" cx="0" cy="0"></circle>
+			</g>
+		</svg>
+		`;
 
-	$barRound = $('.progress-round');
+		/**
+		 * Обновляет состояние точек навигации слайдера
+		 * @param {number} currentSlide - Номер текущего активного слайда (по умолчанию 0)
+		 *
+		 * Функция выполняет три действия:
+		 * 1. Очищает SVG-индикаторы со всех точек
+		 * 2. Обновляет классы активности и ARIA-атрибуты
+		 * 3. Добавляет SVG-индикатор прогресса на активную точку
+		 */
+		const updateSliderDots = (currentSlide = 0) => {
+			// Сначала удаляем все SVG из кнопок
+			$topSliderDots.find("button").html("");
 
-	$slick.on({
-		mouseenter: function () {
-			isPause = true;
-		},
-		mouseleave: function () {
-			isPause = false;
-		}
-	});
+			// Обновляем активное состояние, если указан номер слайда
+			if (currentSlide !== undefined) {
+				const $dots = $(".slick-dots");
+				$dots.find("li").removeClass(activeClass).attr(ariaAttribute, true);
 
-	// On before slide change
-	$slick.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-		console.log(nextSlide);
-	});
-
-	function startProgressbar() {
-
-		resetProgressbar();
-		percentTime = 0;
-		isPause = false;
-		tick = setInterval(interval, 10);
-		// console.log('start process');
-	}
-	var $rbar = $('.progress-round circle');
-	var rlen = 2 * Math.PI * $rbar.attr('r');
-	reset = 1;
-
-	function interval() {
-		var $rbar = $('.progress-round circle');
-
-		$('.slick-dots li').each(function () {
-
-			if ($(this).hasClass('slick-active')) {
-
-				// on reset
-				if (reset) {
-					// $(this).append($cirleProcess);
-					$($cirleProcess).hide().appendTo(this).fadeIn(1000);
-					// console.log('append process');
-					reset = 0;
-				}
+				// Устанавливаем активный класс для текущей точки
+				$dots
+					.find(`li:eq(${currentSlide})`)
+					.addClass(activeClass)
+					.attr(ariaAttribute, false);
 			}
-		});
 
-		percentTime += 1 / (time + 0.1);
+			// Добавляем SVG-индикатор на активную точку
+			$topSliderDots.find(".slick-active button").html(PROGRESS_SVG);
+		};
 
-		$rbar.css({
-			'stroke-dasharray': rlen,
-			'stroke-dashoffset': rlen * (1 - percentTime / 100)
-		});
-
-		if (percentTime >= 90) {
-			$('.progress-round__wrap').fadeOut(1000, function () {
-				$(this).remove();
+		/**
+		 * Привязка обработчиков событий к слайдеру
+		 */
+		$topSlider
+			// При инициализации слайдера
+			.on("init", function () {
+				// Активируем первую точку
+				$(".slick-dots li:first-of-type")
+					.addClass(activeClass)
+					.attr(ariaAttribute, false);
+				updateSliderDots();
+			})
+			// Перед сменой слайда
+			.on("beforeChange", function () {
+				// Удаляем все индикаторы прогресса
+				$topSliderDots.find("button").html("");
+			})
+			// После смены слайда
+			.on("afterChange", function (event, slick, currentSlide) {
+				// Обновляем состояние всех точек и добавляем индикатор
+				updateSliderDots(currentSlide);
 			});
-		}
 
-		if (percentTime >= 100) {
-			$slick.slick('slickNext');
-			startProgressbar();
-			reset = 1;
-
-			// console.log('reset');
-		}
-	}
-
-	function resetProgressbar() {
-		clearTimeout(tick);
-	}
-
-	startProgressbar();
-
-	$('.slick-dots li').on('click', function () {
-		$('.slick-dots li:not(.slick-active)').find('.progress-round__wrap').remove();
-		$($cirleProcess).hide().appendTo(this).fadeIn(1000);
-		startProgressbar();
-		reset = 0;
+		// Вручную запускаем событие инициализации для корректного отображения при первой загрузке
+		$topSlider.trigger("init");
 	});
-
-
-	// // $('.top-slider').slick({
-	// $slick = $('.top-slider')
-	// $slick.slick({
-	// 	slidesToShow: 1,
-	// 	slidesToScroll: 1,
-	// 	arrows: true,
-	// 	dots: true,
-	// 	// fade: true,
-	// 	infinite: true,
-	// 	speed: 300,
-	// 	pauseOnDotsHover: true,
-	// 	// autoplay: true,
-	// 	// autoplaySpeed: 6000,
-	// 	appendDots: $(".top-slider__dots"),
-	// 	prevArrow: $(".top-slider__prev"),
-	// 	nextArrow: $(".top-slider__next"),
-	// 	// speed: 1500,
-	// 	// pauseOnFocus: false,
-	// 	// pauseOnHover: false,
-
-	// });
-
-
-
-
 
 	// trend slider
 	$('.trends__slider').slick({
@@ -306,7 +261,6 @@ $(document).ready(function () {
 
 			var sliderItemsNum = $(this).find('.slick-slide').not('.slick-cloned').length;
 			$sliderParent.find('.slides-numbers--d .total').html(helpers.addZeros(sliderItemsNum));
-
 		});
 
 		//feedback slider
@@ -343,7 +297,6 @@ $(document).ready(function () {
 
 				var sliderItemsNum = $(this).find('.slick-slide').not('.slick-cloned').length;
 				$sliderParent.find('.slides-numbers--f .total').html(helpers.addZeros(sliderItemsNum));
-
 			});
 		};
 
@@ -476,29 +429,75 @@ $(document).ready(function () {
 		}
 	});
 
-	// $(mainSlider).on('click', '.slick-slide', function (e) {
-	// 	e.preventDefault();
-	// 	const slideIndex = $(this).data('slick-index');
-	// 	modal.classList.add("active");
-	// 	$('.modal-slider').slick('slickGoTo', slideIndex);
-	// 	$(".modal-slider").slick("setPosition");
-	// });
+	//portfolio slider
 
-	// closeModal.addEventListener("click", () => {
-	// 	modal.classList.remove("active");
-	// });
+	const $mainSlider1 = $(".portfolio__slider").slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		speed: 800,
+		dots: false,
+		arrows: true,
+		prevArrow: $('.por-prev'),
+		nextArrow: $('.por-next'),
+		asNavFor: ".modal-slider1",
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
+	});
 
-	// modal.addEventListener("click", (e) => {
-	// 	if (e.target === modal) {
-	// 		modal.classList.remove("active");
-	// 	}
-	// });
+	const $modalSlider1 = $(".modal-slider1").slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		asNavFor: ".portfolio__slider",
+		prevArrow: $(".modal-slider1__prev"),
+		nextArrow: $(".modal-slider1__next"),
+	});
 
-	// document.addEventListener("keydown", (e) => {
-	// 	if (e.key === "Escape" && modal.classList.contains("active")) {
-	// 		modal.classList.remove("active");
-	// 	}
-	// });
+	const modal1 = document.getElementById("sliderModal1");
+	const closeModal1 = document.querySelector(".close-modal1");
+	const mainSlider1 = document.querySelector(".portfolio__slider");
+
+	$(mainSlider1).on('click', '.slick-slide', function (e) {
+		e.preventDefault();
+		const slideIndex = $(this).data('slick-index');
+		modal1.classList.add("active");
+
+		$('.modal-slider1').slick('slickSetOption', 'speed', 0, true);
+		$('.modal-slider1').slick('slickGoTo', slideIndex);
+		$(".modal-slider1").slick("setPosition");
+
+		setTimeout(() => {
+			$('.modal-slider1').slick('slickSetOption', 'speed', 300, true);
+		}, 100);
+	});
+
+	closeModal1.addEventListener("click", () => {
+		modal1.classList.remove("active");
+	});
+
+	modal1.addEventListener("click", (e) => {
+		if (e.target === modal1) {
+			modal1.classList.remove("active");
+		}
+	});
+
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape" && modal1.classList.contains("active")) {
+			modal1.classList.remove("active");
+		}
+	});
 
 	// catalogs slider
 	$('.catalogs__slider').slick({
@@ -539,9 +538,6 @@ $(document).ready(function () {
 			}
 		]
 	});
-
-
-
 
 	// product counter
 	function inputNumber(e) {
@@ -622,6 +618,13 @@ $(document).ready(function () {
 		document.getElementById('play_button1').style.display = 'block';
 	}
 
+	//Tabs
+
+	$('ul.section-contacts__tabs').on('click', 'li:not(.active)', function () {
+		$(this)
+			.addClass('active').siblings().removeClass('active')
+			.closest('div.container').find('div.section-contacts__item').removeClass('active').eq($(this).index()).addClass('active');
+	});
 
 
 

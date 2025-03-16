@@ -9,14 +9,9 @@
 	&--lg {
 		height: 540px;
 	}
-	// &--sm {
-	// 	height: auto;
-	// 	padding-bottom: 5px;
-	// }
 	&:hover {
 		box-shadow: $shadow_primary;
 	}
-
 	&-hor {
 		flex-direction: row;
 		align-items: start;

@@ -10,13 +10,12 @@
 	outline: 0;
 	opacity: 0;
 	transition:
-		opacity 0.15s linear,
-		z-index 0.15s;
+	opacity 0.15s linear,
+	z-index 0.15s;
 	z-index: -1;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
-
 .model-open {
 	z-index: 99999;
 	opacity: 1;
@@ -24,11 +23,7 @@
 }
 .modal-inner {
 	transform: translate(0, -25%);
-	transition: -webkit-transform 0.3s ease-out;
 	transition: transform 0.3s ease-out;
-	transition:
-		transform 0.3s ease-out,
-		-webkit-transform 0.3s ease-out;
 	display: inline-block;
 	vertical-align: middle;
 	width: 460px;
@@ -101,7 +96,8 @@
 	&.active {
 		display: block;
 	}
-	&-slider {		
+	&-slider,
+	&-slider1 {
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -147,7 +143,8 @@
 		}
 	}
 }
-.close-btn.close-modal {
+.close-btn.close-modal,
+.close-btn.close-modal1 {
 	position: absolute;
 	right: 25px;
 	top: 25px;

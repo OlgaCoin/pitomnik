@@ -110,8 +110,7 @@
 			background-image: url("../icons/quote.svg");
 			background-repeat: no-repeat;
 			background-size: 95px 72px;
-			background-position: 42px 62px;
-			
+			background-position: 42px 62px;			
 		}
 	}
 	&__text {
@@ -140,7 +139,6 @@
 		}
 	}
 }
-
 .slides-numbers {
 	color: $t_titles;
 	display: none;
@@ -150,7 +148,6 @@
 	font-family: $f_titles;
 	font-size: 30px;
 	font-weight: 600;
-
 	.total {
 		font-size: 24px;
 		font-weight: 500;

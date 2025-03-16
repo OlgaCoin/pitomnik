@@ -34,7 +34,7 @@ button,
 button:active,
 button:focus {
 	border: none;
-	outline: none;
+	outline: none !important;
 }
 input:focus,
 textarea:focus {
@@ -79,11 +79,12 @@ strong {
 @import "blocks/popups";
 @import "blocks/buttons";
 @import "blocks/sections";
-@import "blocks/progress";
 @import "blocks/top-slider";
 @import "blocks/sliders";
 @import "blocks/cards";
 @import "blocks/counter";
 @import "blocks/badges";
+@import "blocks/contacts";
+@import "blocks/to-top";
 
 @import "blocks/media";

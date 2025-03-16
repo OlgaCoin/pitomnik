@@ -1,0 +1,96 @@
+.section-contacts {
+	margin-bottom: 20px;
+	& .section__title {
+		margin-bottom: 0;
+	}
+	&__tabs {
+		display: flex;
+		justify-content: end;
+		align-items: start;
+		gap: 16px;
+		margin-bottom: 32px;
+	}
+	&__tab {
+		&.active .btn--tab {
+			background-color: $green_primary;
+			border: 1px solid $green_primary;
+			color: $white;
+			transition: $trans;
+			&::after {
+				bottom: -18px;
+				position: absolute;
+				content: "";
+				border: 10px solid transparent;
+				border-top: 10px solid $green_primary;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: -1;
+			}
+		}
+	}
+	&__item {
+		position: relative;
+		display: none;
+		&.active {
+			display: block;
+		}
+		&-map {
+			border: $border_l-green;
+		}
+		&-wrapper {
+			border: $border_l-green;
+			border-radius: $radius_sm;
+			padding: 40px 56px;
+			width: 432px;
+			height: auto;
+			box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08);
+			background: #fff;
+			position: absolute;
+			top: 36px;
+			left: 36px;
+			& h4 {
+				@include h-4;
+				margin-bottom: 26px;
+			}
+			& address {
+				font-size: 18px;
+				line-height: 144%;
+				margin-bottom: 34px;
+			}
+		}
+	}
+}
+.phone-block {
+	display: flex;
+	align-items: start;
+	justify-content: start;
+	flex-direction: column;
+	gap: 0;
+	margin-bottom: 34px;
+	& > a {
+		font-family: $f_titles;
+		font-weight: 600;
+		font-size: 20px;
+		color: $t_titles;
+		transition: $trans;
+		&:hover {
+			color: $green;
+		}
+	}
+	& > span {
+		font-size: 12px;
+		color: #616161;
+	}
+}
+.email-block {
+	& a {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 144%;
+		color: $t_primary;
+		transition: $trans;
+		&:hover {
+			color: $green;
+		}
+	}
+}

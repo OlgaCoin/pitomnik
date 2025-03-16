@@ -1,9 +1,5 @@
 // top slider
-
 .top-slider {
-	// &--items {
-	// 	overflow: hidden;
-	// }
 	&__item {
 		padding-top: 150px;
 		background-position: center center;
@@ -48,35 +44,39 @@
 		margin-right: 10px;
 	}
 	&__dots {
-		position: absolute;
-		top: 320px;
-		right: 35%;
-		z-index: 999;
+		padding-top: 10px;
 		& ul {
 			& li {
-				margin-bottom: 48px;
 				position: relative;
+				&::after {
+					position: absolute;
+					content: "";
+					@include p2-reg;
+					color: rgba(255, 255, 255, 0.7);
+					top: 0;
+					left: 84px;
+					max-width: 100%;
+				}
+				&:nth-child(1)::after {
+					content: "Скидки для оптовых покупателей покупателей";
+				}
+				&:nth-child(2)::after {
+					content: "Специальные условия для дизайнеров";
+				}
+				&:nth-child(3)::after {
+					content: "Скидки до 30% при повторных заказах";
+				}
 				& button {
 					background-image: url("../icons/icon-check.svg");
 					font-size: 0;
 					width: 56px;
 					height: 56px;
 					background-color: transparent;
+					padding: 0;
+					margin-bottom: 48px;
 				}
-				// & li.slick-active {
-				// 	& button {
-				// 		position: relative;
-				// 	}
-				// }
-			}
-			.progress-round__wrap {
-				position: absolute;
-				left: 0;
-				top: 0;
-				// transform: translate(-50%, -50%);
 			}
 		}
-
 		&-item {
 			display: flex;
 			justify-content: start;
@@ -110,36 +110,30 @@
 		opacity: 0.9;
 	}
 }
-// .slick-dots {
-// 	& li {
-// 		display: inline-block;
-// 		margin-right: 12px;
-// 		& button {
-// 		background-color: $t_dark;
-// 		border: none;
-// 		outline: none;
-// 		padding: 0;
-// 		height: 5px;
-// 		width: 5px;
-// 		transition: $trans;
-// 		border-radius: 50%;
-// 		}
-// 	}
-// }
-// .slick-dots li button {
-// 	font-size: 0;
-// 	line-height: 0;
-// 	display: block;
-// 	width: 109px;
-// 	border-radius: 7px;
-// 	height: 80px;
-// 	cursor: pointer;
-// 	color: transparent;
-// 	border: 0;
-// 	outline: none;
-// 	background: url(../icon_check.svg) no-repeat 0 0 / cover;
-// }
-
+.circle-bg {
+	fill: rgba(255, 255, 255, 0);
+	stroke: rgba(0, 0, 0, 0.05);
+	stroke-width: 2;
+	stroke-linecap: butt;
+}
+.circle-go {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 2;
+	stroke-linecap: round;
+	transform: rotate(-90deg);
+	animation: progress calc(6000ms + (1500ms / 2 - 100ms)) linear both;
+	stroke-dasharray: 180;
+	stroke-dashoffset: 180;
+}
+@keyframes progress {
+	0% {
+		stroke-dashoffset: 180;
+	}
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
 .icon-wrapper {
 	display: flex;
 	justify-content: center;

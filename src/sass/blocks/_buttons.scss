@@ -3,7 +3,7 @@
 	font-weight: 600;
 	border-radius: $radius_sm;
 	color: #fff;
-	outline: 0;
+	outline: none;
 	transition: $trans;
 	&:hover {
 		color: $white;
@@ -40,6 +40,19 @@
 				transform: translateX(5px);
 				transition: $trans;
 			}
+		}
+	}
+	&--tab {
+		border: $border_l-green;
+		background-color: $bg;
+		padding: 0 35px;
+		color: $t_titles;
+		position: relative;
+		&:hover {
+			color: $t_titles;
+		}
+		&:focus {
+			border: $border_l-green;
 		}
 	}
 	&--lone {

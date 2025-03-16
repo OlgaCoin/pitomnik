@@ -42,9 +42,10 @@
 		}
 	}
 	&__logo {
-		display: block;
+		display: block;		
 		& img {
 			max-width: 100%;
+			height: auto;
 		}
 		&--mobile {
 			display: none;
@@ -84,6 +85,7 @@
 		font-size: 17px;
 		color: $green;
 		transition: $trans;
+		background-color: transparent;
 		&:hover {
 			color: $green_primary;
 		}

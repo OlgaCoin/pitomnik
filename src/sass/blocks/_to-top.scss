@@ -1,0 +1,28 @@
+.to-top {
+	display: none;
+	cursor: pointer;
+	transform: rotate(-90deg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	border-radius: $radius_sm;
+	background-color: $green;
+	position: fixed;
+	bottom: 110px;
+	right: 50px;
+	z-index: 600;
+	opacity: .6;
+	transition: $trans;	
+	& i  {
+		font-size: 24px;
+		color: $white;
+	}
+	&:hover {
+		opacity: 1;
+	}
+	&.show {
+		display: flex;
+	}
+}
