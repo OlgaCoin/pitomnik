@@ -98,8 +98,49 @@
 					<div class="header__top-wrapper">
 
 						<div class="header__top-item">
+							<div class="mob-wrapper">
+								<div class="burger" title="Меню">
+									<div class="burger__row"></div>
+									<div class="burger__row"></div>
+									<div class="burger__row"></div>
+								</div>
+								<a class="header__logo logo logo__mobile " href="index.html">
+									<img class="logo__mobile--md" src="icons/logo_md.svg" alt="logo">
+									<img class="logo__mobile--sm" src="icons/logo_sm.svg" alt="logo">
+								</a>
+							</div>
+
 							<nav class="nav">
+								<button class="back-button"><i class="icon-icon_arrow-left"></i>Назад</button>
 								<ul class="nav__menu">
+									<li class="drop-down">
+										<a href="#" class="nav__menu-item">Каталог</a>
+
+										<ul class="nav__submenu">
+											<li class="drop-down">
+												<a href="#" class="nav__submenu-item">Злаки</a>
+												<ul class="nav__submenu">
+													<li><a href="#">Хвойные</a></li>
+													<li><a href="#">Хвойные</a></li>
+													<li><a href="#">Лианы</a></li>
+													<li><a href="#">Многолетники</a></li>
+													<li><a href="#">Розы</a></li>
+													<li><a href="#">Луковичные</a></li>
+													<li><a href="#">Лиственные</a></li>
+													<li><a href="#">Плодовые</a></li>
+													<li><a href="#">Каталоги растений</a></li>
+												</ul>
+											</li>
+											<li><a href="#">Хвойные</a></li>
+											<li><a href="#">Лианы</a></li>
+											<li><a href="#">Многолетники</a></li>
+											<li><a href="#">Розы</a></li>
+											<li><a href="#">Луковичные</a></li>
+											<li><a href="#">Лиственные</a></li>
+											<li><a href="#">Плодовые</a></li>
+											<li><a href="#">Каталоги растений</a></li>
+										</ul>
+									</li>
 									<li>
 										<a href="#" class="nav__menu-item">О питомнике</a>
 									</li>
@@ -121,44 +162,6 @@
 								</ul>
 							</nav>
 
-							<!-- <nav class="nav--mobile">
-								<ul class="nav__menu--mobile">
-									<li class="drop-down">
-										<a href="#" class="menu-item">Кталог</a>
-
-										<ul class="mobile__submenu">
-											<li><a href="#" class="mobile__submenu-item">Злаки</a></li>
-											<li><a href="#" class="mobile__submenu-item">Хвойные</a></li>
-											<li><a href="#" class="mobile__submenu-item">Лианы</a></li>
-											<li><a href="#" class="mobile__submenu-item">Многолетники</a></li>
-											<li><a href="#" class="mobile__submenu-item">Розы</a></li>
-											<li><a href="#" class="mobile__submenu-item">Луковичные</a></li>
-											<li><a href="#" class="mobile__submenu-item">Лиственные</a></li>
-											<li><a href="#" class="mobile__submenu-item">Плодовые</a></li>
-											<li><a href="#" class="mobile__submenu-item">Каталоги растений</a></li>
-										</ul>
-									</li>
-
-									<li>
-										<a href="#" class="mobile__menu-item">О питомнике</a>
-									</li>
-									<li>
-										<a href="#" class="mobile__menu-item">Прайс-лист</a>
-									</li>
-									<li>
-										<a href="№" class="mobile__menu-item">Доставка и оплата</a>
-									</li>
-									<li>
-										<a href="#" class="mobile__menu-item">Посадка растений</a>
-									</li>
-									<li>
-										<a href="#" class="mobile__menu-item">Блог</a>
-									</li>
-									<li>
-										<a href="#" class="mobile__menu-item">Контакты</a>
-									</li>
-								</ul>
-							</nav> -->
 						</div>
 
 						<div class="header__top-item contacts__block">
@@ -187,6 +190,14 @@
 								</a>
 							</div>
 						</div>
+
+						<div class="cart header__cart cart--mobile">
+							<a href="order.html" class="cart__wrapper" title="Перейти в корзину">
+								<i class="icon-icon_cart"></i>
+								<div class="cart__num" id="cart_num">2</div>
+							</a>
+						</div>
+
 					</div>
 
 				</div>
@@ -571,7 +582,7 @@
 				</div>
 
 				<div class="row gx-0">
-					<div class="col-lg-3">
+					<div class="col-xl-3 col-lg-4 col-md-6">
 						<div class="card card-cat">
 							<a href="#" class="card-cat__img"><img src="img/catalog/1.jpg" alt="Злаки"></a>
 							<h5 class="card-cat__title">
@@ -579,7 +590,7 @@
 							</h5>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-xl-3 col-lg-4 col-md-6">
 						<div class="card card-cat">
 							<a href="#" class="card-cat__img"><img src="img/catalog/2.jpg" alt="Хвойные растения"></a>
 							<h5 class="card-cat__title">
@@ -587,7 +598,7 @@
 							</h5>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-xl-3 col-lg-4 col-md-6">
 						<div class="card card-cat">
 							<a href="#" class="card-cat__img"><img src="img/catalog/3.jpg" alt="Плодовые растения"></a>
 							<h5 class="card-cat__title">
@@ -595,7 +606,7 @@
 							</h5>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-xl-3 col-lg-4 col-md-6">
 						<div class="card card-cat">
 							<a href="#" class="card-cat__img"><img src="img/catalog/4.jpg" alt="Лианы"></a>
 							<h5 class="card-cat__title">
@@ -603,10 +614,7 @@
 							</h5>
 						</div>
 					</div>
-				</div>
-
-				<div class="row gx-0">
-					<div class="col-lg-3">
+					<div class="col-xl-3 col-lg-4 col-md-6">
 						<div class="card card-cat">
 							<a href="#" class="card-cat__img"><img src="img/catalog/5.jpg" alt="Многолетники"></a>
 							<h5 class="card-cat__title">
@@ -614,7 +622,7 @@
 							</h5>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-xl-3 col-lg-4 col-md-6">
 						<div class="card card-cat">
 							<a href="#" class="card-cat__img"><img src="img/catalog/6.jpg" alt="Розы"></a>
 							<h5 class="card-cat__title">
@@ -622,7 +630,7 @@
 							</h5>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-xl-3 col-lg-4 col-md-6">
 						<div class="card card-cat">
 							<a href="#" class="card-cat__img"><img src="img/catalog/7.jpg" alt="Луковичные растения"></a>
 							<h5 class="card-cat__title">
@@ -630,7 +638,7 @@
 							</h5>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-xl-3 col-lg-4 col-md-6">
 						<div class="card card-cat">
 							<a href="#" class="card-cat__img"><img src="img/catalog/8.jpg" alt="Лиственные растения"></a>
 							<h5 class="card-cat__title">

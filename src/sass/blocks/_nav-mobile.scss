@@ -1,0 +1,119 @@
+.burger,
+.back-button {
+	display: none;
+}
+
+@media (max-width: 991px) {
+	.burger {
+		display: flex;
+		width: 40px;
+		height: 40px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		position: relative;
+		transition: all 0.5s;
+		z-index: 999;
+		&__row {
+			background-color: #363636;
+			height: 3px;
+			margin: 2px 0;
+			position: relative;
+			width: 65%;
+			transition: all 0.5s;
+		}
+		&.active {
+			height: 100%;
+		}
+		&.active .burger__row {
+			background-color: $green;
+		}
+		&.active .burger__row:first-child {
+			transform: rotate(-135deg);
+			top: 7px;
+		}
+		&.active .burger__row:last-child {
+			transform: rotate(-225deg);
+			top: -7px;
+		}
+		&.active .burger__row:nth-child(2) {
+			opacity: 0;
+		}
+	}
+	.back-button {
+		width: 100%;
+		justify-content: flex-start;
+		align-items: center;
+		line-height: 54px;
+		height: 56px;
+		background-color: $bg;
+		color: $t_primary;
+		border-bottom: $border;
+		font-size: 18px;
+		padding: 0 15px;
+		& i {
+			margin-right: 16px;
+			font-size: 27px;
+		}
+	}
+	.arrow {
+		width: 56px;
+		background-color: $white;
+		border-left: $border;
+		& i {
+			font-size: 26px;
+			line-height: 54px;
+		}
+	}
+	.nav {
+		display: none;
+		background-color: white;
+		width: 100vw;
+		height: calc(100vh - 65px);
+		position: absolute;
+		top: 65px;
+		left: 0;
+		z-index: 2100;
+		// overflow: hidden;
+		overflow-y: scroll;
+		&__menu {
+			position: absolute;
+			flex-flow: column nowrap;
+			gap: 0;
+			transition: 0.3s;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			top: 0;
+			left: 0;
+			height: 100%;
+			& ul {
+				position: absolute;
+				display: none;
+				top: 56px;
+				left: 100%;
+				width: 100%;
+			}
+			& ul ul {
+				top: 0;
+			}
+			& li {
+				border-bottom: $border;
+				display: flex;
+				justify-content: space-between;
+				& a {
+					flex: 3;
+					line-height: 54px;
+					padding: 0 15px;
+					font-weight: 500;
+					font-size: 20px;
+					color: $t_titles;
+				}
+			}
+			& .drop-down {
+				display: flex;
+			}
+		}
+	}
+}

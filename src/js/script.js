@@ -28,6 +28,98 @@ $(document).ready(function () {
 		$('html').animate({ scrollTop: 0 }, 1000);
 	});
 
+	$(".burger").click(function () {
+		$(this).toggleClass("active");
+	});
+
+
+	//Mobile menu
+
+	// Variable declaration...
+	var left, width, newLeft;
+
+	// Add the "top-menu" class to the top level ul...
+	$('.nav').children('ul').addClass('top-menu');
+
+	// Add buttons to items that have submenus...
+	$('.drop-down').append('<button class="arrow"><i class="icon-chevron-right"></i></button>');
+
+	// Mobile menu toggle functionality
+	$('.burger').on('click', function () {
+
+		// Detect whether the mobile menu is being displayed...
+		display = $('.nav').css("display");
+
+		if (display === 'none') {
+
+			// Display the menu...
+			$('.nav').css("display", "block");
+
+		} else {
+
+			// Hide the mobile menu...
+			$('.nav').css("display", "none");
+
+			// and reset the mobile menu...
+			$('.current-menu').removeClass('current-menu');
+			$('.top-menu').css("left", "0");
+			$('.back-button').css("display", "none");
+		}
+	});
+
+	// Functionality to reveal the submenus...
+	$('.arrow').on('click', function () {
+
+		// The .current-menu will no longer be current, so remove that class...
+		$('.current-menu').removeClass('current-menu');
+
+		// Turn on the display property of the child menu
+		$(this).siblings('ul').css("display", "block").addClass('current-menu');
+
+		left = parseFloat($('.top-menu').css("left"));
+		width = Math.round($('.nav').width());
+		newLeft = left - width;
+
+		// Slide the new menu leftwards (into the .mobile viewport)...
+		$('.top-menu').css("left", newLeft);
+
+		// Also display the "back button" (if it is hidden)...
+		if ($('.back-button').css("display") === "none") {
+			$('.back-button').css("display", "flex");
+		}
+	});
+
+	// Functionality to return to parent menus...
+	$('.back-button').on('click', function () {
+
+		// Hide the back button (if the current menu is the top menu)...
+		if ($('.current-menu').parent().parent().hasClass('top-menu')) {
+			$('.back-button').css("display", "none");
+		}
+
+		left = parseFloat($('.top-menu').css("left"));
+		width = Math.round($('.nav').width());
+		newLeft = left + width;
+
+		// Slide the new menu leftwards (into the .mobile viewport)...
+		$('.top-menu').css("left", newLeft);
+
+		// Allow 0.25 seconds for the css transition to finish...
+		window.setTimeout(function () {
+
+			// Hide the out-going .current-menu...
+			$('.current-menu').css("display", "none");
+
+			// Add the .current-menu to the new current menu...
+			$('.current-menu').parent().parent().addClass('current-menu');
+
+			// Remove the .current-menu class from the out-going submenu...
+			$('.current-menu .current-menu').removeClass('current-menu');
+
+		}, 250);
+
+	});
+
 	// popup
 
 	$(".click-here").on('click', function () {
@@ -152,9 +244,16 @@ $(document).ready(function () {
 		nextArrow: $('.t-next'),
 		responsive: [
 			{
-				breakpoint: 992,
+				breakpoint: 1199,
 				settings: {
 					slidesToShow: 3,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
 					slidesToScroll: 1
 				}
 			},
@@ -192,9 +291,16 @@ $(document).ready(function () {
 		nextArrow: $('.s-next'),
 		responsive: [
 			{
-				breakpoint: 992,
+				breakpoint: 1199,
 				settings: {
 					slidesToShow: 3,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
 					slidesToScroll: 1
 				}
 			},
@@ -329,9 +435,16 @@ $(document).ready(function () {
 		nextArrow: $('.a-next'),
 		responsive: [
 			{
-				breakpoint: 992,
+				breakpoint: 1199,
 				settings: {
 					slidesToShow: 3,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
 					slidesToScroll: 1
 				}
 			},
@@ -371,6 +484,20 @@ $(document).ready(function () {
 		nextArrow: $('.p-next'),
 		asNavFor: ".modal-slider",
 		responsive: [
+			{
+				breakpoint: 1199,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1
+				}
+			},
 			{
 				breakpoint: 768,
 				settings: {
@@ -442,6 +569,20 @@ $(document).ready(function () {
 		asNavFor: ".modal-slider1",
 		responsive: [
 			{
+				breakpoint: 1199,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1
+				}
+			},
+			{
 				breakpoint: 768,
 				settings: {
 					slidesToShow: 2
@@ -509,9 +650,16 @@ $(document).ready(function () {
 		nextArrow: $('.c-next'),
 		responsive: [
 			{
-				breakpoint: 992,
+				breakpoint: 1199,
 				settings: {
 					slidesToShow: 3,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
 					slidesToScroll: 1
 				}
 			},
