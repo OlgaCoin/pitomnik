@@ -79,6 +79,7 @@
 		bottom: 0;
 		z-index: 2100;
 		overflow-y: auto;
+		box-shadow: $shadow_primary;
 		&__menu {
 			position: absolute;
 			flex-flow: column nowrap;
