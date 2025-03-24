@@ -29,6 +29,10 @@
 		width: 100%;
 		height: auto;
 	}
+	&-trends {
+		position: relative;
+		overflow: hidden;
+	}
 	&-gallery {
 		padding: 0;
 		&__slider {
