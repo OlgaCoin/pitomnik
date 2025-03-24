@@ -1,5 +1,5 @@
 .to-top {
-	display: none;
+	visibility: hidden;
 	cursor: pointer;
 	transform: rotate(-90deg);
 	display: flex;
@@ -13,9 +13,9 @@
 	bottom: 110px;
 	right: 50px;
 	z-index: 1000;
-	opacity: .6;
-	transition: $trans;	
-	& i  {
+	opacity: 0.6;
+	transition: $trans;
+	& i {
 		font-size: 24px;
 		color: $white;
 	}
@@ -23,6 +23,6 @@
 		opacity: 1;
 	}
 	&.show {
-		display: flex;
+		visibility: visible;
 	}
 }

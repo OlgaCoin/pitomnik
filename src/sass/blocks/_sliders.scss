@@ -30,6 +30,11 @@
 		}
 	}
 	&__arrows {
+		& button.slick-disabled {
+			background: $bg;
+			color: $t_primary;
+			border: $border_l-green;
+		}
 		& .btn--prev,
 		& .btn--next {
 			position: absolute;
@@ -79,7 +84,7 @@
 		box-shadow: $shadow_primary;
 		padding: 80px;
 		z-index: 2;
-		& > img {
+		& .img-wrapper {
 			display: none;
 		}
 		& > h3 {
@@ -110,7 +115,7 @@
 			background-image: url("../icons/quote.svg");
 			background-repeat: no-repeat;
 			background-size: 95px 72px;
-			background-position: 42px 62px;			
+			background-position: 42px 62px;
 		}
 	}
 	&__text {
@@ -138,6 +143,7 @@
 			}
 		}
 	}
+	
 }
 .slides-numbers {
 	color: $t_titles;

@@ -62,8 +62,9 @@
 		background-color: $white;
 		border-left: $border;
 		& i {
-			font-size: 26px;
+			font-size: 35px;
 			line-height: 54px;
+			color: $t_primary;
 		}
 	}
 	.nav {
@@ -109,6 +110,10 @@
 					font-weight: 500;
 					font-size: 20px;
 					color: $t_titles;
+					transition: $trans;
+					&:hover {
+						color: $green;
+					}
 				}
 			}
 			& .drop-down {

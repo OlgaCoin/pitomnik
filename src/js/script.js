@@ -6,7 +6,6 @@ $(document).ready(function () {
 		menuFixed = 60, // кол-во пикселей от границы, когда меню "прилипнет" к краю экрана.
 		menuStatus = false; // Некая оптимизация.
 
-
 	$(window).on('scroll', function () {
 		if ($(this).scrollTop() >= menuFixed && menuStatus === false) {
 			menuStatus = true;
@@ -17,21 +16,16 @@ $(document).ready(function () {
 				menuElem.removeAttr('style').removeClass('fixed');
 			});
 		}
-		if ($(this).scrollTop() >= 6000) {
+		if ($(this).scrollTop() >= 4000) {
 			$('.to-top').addClass('show');
 		} else {
 			$('.to-top').removeClass('show');
 		}
 	});
 
-	$('.to-top').click(function () {
+	$('.to-top').on('click', function () {
 		$('html').animate({ scrollTop: 0 }, 1000);
 	});
-
-	$(".burger").click(function () {
-		$(this).toggleClass("active");
-	});
-
 
 	//Mobile menu
 
@@ -46,6 +40,7 @@ $(document).ready(function () {
 
 	// Mobile menu toggle functionality
 	$('.burger').on('click', function () {
+		$(this).toggleClass("active");
 
 		// Detect whether the mobile menu is being displayed...
 		display = $('.nav').css("display");
@@ -159,6 +154,14 @@ $(document).ready(function () {
 			speed: ANIMATION_SPEED,
 			pauseOnFocus: false,
 			pauseOnHover: false,
+			responsive: [
+				{
+					breakpoint: 575,
+					settings: {
+						dots: false
+					}
+				}
+			]
 		});
 
 		// Класс CSS для активного элемента
@@ -193,7 +196,7 @@ $(document).ready(function () {
 
 			// Обновляем активное состояние, если указан номер слайда
 			if (currentSlide !== undefined) {
-				const $dots = $(".slick-dots");
+				const $dots = $(".top-slider .slick-dots");
 				$dots.find("li").removeClass(activeClass).attr(ariaAttribute, true);
 
 				// Устанавливаем активный класс для текущей точки
@@ -206,7 +209,6 @@ $(document).ready(function () {
 			// Добавляем SVG-индикатор на активную точку
 			$topSliderDots.find(".slick-active button").html(PROGRESS_SVG);
 		};
-
 		/**
 		 * Привязка обработчиков событий к слайдеру
 		 */
@@ -214,7 +216,7 @@ $(document).ready(function () {
 			// При инициализации слайдера
 			.on("init", function () {
 				// Активируем первую точку
-				$(".slick-dots li:first-of-type")
+				$(".top-slider .slick-dots li:first-of-type")
 					.addClass(activeClass)
 					.attr(ariaAttribute, false);
 				updateSliderDots();
@@ -239,12 +241,13 @@ $(document).ready(function () {
 		speed: 800,
 		slidesToShow: 4,
 		slidesToScroll: 1,
+		infinite: false,
 		// autoplay: true,
 		prevArrow: $('.t-prev'),
 		nextArrow: $('.t-next'),
 		responsive: [
 			{
-				breakpoint: 1199,
+				breakpoint: 1200,
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 1
@@ -258,21 +261,7 @@ $(document).ready(function () {
 				}
 			},
 			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-				}
-			},
-			{
 				breakpoint: 576,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 480,
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1
@@ -291,7 +280,7 @@ $(document).ready(function () {
 		nextArrow: $('.s-next'),
 		responsive: [
 			{
-				breakpoint: 1199,
+				breakpoint: 1200,
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 1
@@ -305,27 +294,39 @@ $(document).ready(function () {
 				}
 			},
 			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-				}
-			},
-			{
 				breakpoint: 576,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 480,
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1
 				}
 			}
 		]
+	});
+
+	//gallery__slider
+
+	$(window).on('load', () => {
+		const element = $('.gallery__slider');
+		const mediaQuery = window.matchMedia('(max-width: 991px)');
+
+		const handleSwitchSlick = ((e) => {
+			if (e.matches) {
+				element.slick({
+					slidesToShow: 2,
+					slidesToScroll: 2,
+					arrows: false,
+					speed: 1000,
+					dots: true,
+					appendDots: $(".gal__dots"),
+					mobileFirst: true
+				});
+			} else if (element.hasClass('slick-initialized')) {
+				element.slick('unslick');
+			}
+		});
+
+		mediaQuery.addListener(handleSwitchSlick);
+		handleSwitchSlick(mediaQuery);
 	});
 
 	//decor slider
@@ -347,11 +348,22 @@ $(document).ready(function () {
 				fade: true,
 				prevArrow: $('.d-prev'),
 				nextArrow: $('.d-next'),
+				appendDots: $(".decor__dots"),
 				responsive: [
 					{
-						breakpoint: 767,
+						breakpoint: 992,
 						settings: {
-							adaptiveHeight: true
+							adaptiveHeight: true,
+							dots: true,
+							fade: false
+						}
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							adaptiveHeight: true,
+							dots: true,
+							fade: false
 						}
 					}
 				]
@@ -367,6 +379,7 @@ $(document).ready(function () {
 
 			var sliderItemsNum = $(this).find('.slick-slide').not('.slick-cloned').length;
 			$sliderParent.find('.slides-numbers--d .total').html(helpers.addZeros(sliderItemsNum));
+
 		});
 
 		//feedback slider
@@ -379,15 +392,34 @@ $(document).ready(function () {
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					dots: false,
+					appendDots: $(".feedback__dots"),
 					infinite: true,
 					fade: true,
 					prevArrow: $('.f-prev'),
 					nextArrow: $('.f-next'),
 					responsive: [
 						{
-							breakpoint: 767,
+							breakpoint: 992,
 							settings: {
-								adaptiveHeight: true
+								adaptiveHeight: true,
+								slidesToShow: 1,
+								slidesToScroll: 1,
+								dots: true,
+								fade: false
+							}
+						},
+						{
+							breakpoint: 768,
+							settings: {
+								adaptiveHeight: true,
+								dots: true
+							}
+						},
+						{
+							breakpoint: 576,
+							settings: {
+								adaptiveHeight: true,
+								dots: true
 							}
 						}
 					]
@@ -408,10 +440,6 @@ $(document).ready(function () {
 
 		sliderInit();
 
-		//   $('.slick-next').on('click', function () {
-		//     console.log('test');
-		//     $('.slider-holder').slick('slickGoTo', 5);
-		// });
 	};
 
 	sliderInit();
@@ -429,13 +457,12 @@ $(document).ready(function () {
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		dots: false,
-		// fade: true,
 		// autoplay: true,
 		prevArrow: $('.a-prev'),
 		nextArrow: $('.a-next'),
 		responsive: [
 			{
-				breakpoint: 1199,
+				breakpoint: 1200,
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 1
@@ -449,21 +476,7 @@ $(document).ready(function () {
 				}
 			},
 			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-				}
-			},
-			{
 				breakpoint: 576,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 480,
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1
@@ -483,9 +496,10 @@ $(document).ready(function () {
 		prevArrow: $('.p-prev'),
 		nextArrow: $('.p-next'),
 		asNavFor: ".modal-slider",
+		appendDots: $(".projects__dots"),
 		responsive: [
 			{
-				breakpoint: 1199,
+				breakpoint: 1200,
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 1
@@ -494,20 +508,27 @@ $(document).ready(function () {
 			{
 				breakpoint: 992,
 				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
+					adaptiveHeight: true,
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					dots: true
 				}
 			},
 			{
 				breakpoint: 768,
 				settings: {
-					slidesToShow: 2
+					adaptiveHeight: true,
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					dots: true
 				}
 			},
 			{
-				breakpoint: 480,
+				breakpoint: 576,
 				settings: {
-					slidesToShow: 1
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					dots: true
 				}
 			}
 		]
@@ -563,13 +584,14 @@ $(document).ready(function () {
 		slidesToScroll: 1,
 		speed: 800,
 		dots: false,
+		appendDots: $(".portfolio__dots"),
 		arrows: true,
 		prevArrow: $('.por-prev'),
 		nextArrow: $('.por-next'),
 		asNavFor: ".modal-slider1",
 		responsive: [
 			{
-				breakpoint: 1199,
+				breakpoint: 1200,
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 1
@@ -578,20 +600,26 @@ $(document).ready(function () {
 			{
 				breakpoint: 992,
 				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
+					adaptiveHeight: true,
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					dots: true
 				}
 			},
 			{
 				breakpoint: 768,
 				settings: {
-					slidesToShow: 2
+					slidesToShow: 2,
+					dots: true
 				}
 			},
 			{
-				breakpoint: 480,
+				breakpoint: 576,
 				settings: {
-					slidesToShow: 1
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					dots: true,
+					autoplay: false
 				}
 			}
 		]
@@ -650,7 +678,7 @@ $(document).ready(function () {
 		nextArrow: $('.c-next'),
 		responsive: [
 			{
-				breakpoint: 1199,
+				breakpoint: 1200,
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 1
@@ -664,21 +692,7 @@ $(document).ready(function () {
 				}
 			},
 			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-				}
-			},
-			{
 				breakpoint: 576,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 480,
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1
@@ -773,8 +787,6 @@ $(document).ready(function () {
 			.addClass('active').siblings().removeClass('active')
 			.closest('div.container').find('div.section-contacts__item').removeClass('active').eq($(this).index()).addClass('active');
 	});
-
-
 
 });
 
