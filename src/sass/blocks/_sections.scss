@@ -222,11 +222,15 @@
 			justify-content: space-between;
 			align-items: center;
 			gap: 26px;
-			& > a {
+			& a {
 				display: block;
 				& > svg {
 					width: 56px;
 					height: 56px;
+					transition: transform 0.3s linear;
+				}
+				&:hover > svg {
+					transform: scale(1.1);
 				}
 			}
 		}
@@ -371,6 +375,9 @@
 				height: 470px;
 				display: block;
 				position: relative;
+				border: none;
+				overflow: hidden;
+				border-radius: $radius_sm;
 				&::after {
 					position: absolute;
 					content: "";
@@ -382,6 +389,10 @@
 				}
 				&:hover {
 					color: $white;
+					&:hover .section-blog__img img {
+						transition: filter 0.5s ease-in-out;
+						filter: blur(2px);
+					}
 				}
 				&:hover h4,
 				&:hover h5 {

@@ -21,7 +21,7 @@
 			padding: 20px;
 			border: $border;
 			margin-right: -1px;
-			& > img {
+			& a > img {
 				border-radius: $radius_sm;
 				object-fit: cover;
 				width: 100%;
@@ -94,12 +94,15 @@
 			font-style: italic;
 			font-weight: 500;
 			font-size: 24px;
-			color: $t_primary;
+			color: #339967;
 			margin-bottom: 34px;
 			transition: $trans;
 			display: flex;
 			justify-content: start;
 			align-items: center;
+			& i {
+				padding-top: 5px;
+			}
 			&:hover {
 				color: $green;
 			}

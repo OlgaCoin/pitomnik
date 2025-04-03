@@ -2,20 +2,14 @@ $(document).ready(function () {
 
 	// sticky menu + toTop
 
-	let menuElem = $('.header__bottom'), // Элемент который будет прилепать
-		menuFixed = 60, // кол-во пикселей от границы, когда меню "прилипнет" к краю экрана.
-		menuStatus = false; // Некая оптимизация.
+	$(window).scroll(function () {
 
-	$(window).on('scroll', function () {
-		if ($(this).scrollTop() >= menuFixed && menuStatus === false) {
-			menuStatus = true;
-			menuElem.addClass('fixed').animate({ 'top': '0%' }, 600, 'linear');
-		} else if ($(this).scrollTop() < menuFixed && menuStatus === true) {
-			menuStatus = false;
-			menuElem.animate({ 'top': '-100%' }, 0, 'linear', function () {
-				menuElem.removeAttr('style').removeClass('fixed');
-			});
+		if ($(this).scrollTop() >= 60) {
+			$('.header__bottom').addClass('fixed');
+		} else {
+			$('.header__bottom').removeClass('fixed');
 		}
+
 		if ($(this).scrollTop() >= 4000) {
 			$('.to-top').addClass('show');
 		} else {
@@ -24,8 +18,9 @@ $(document).ready(function () {
 	});
 
 	$('.to-top').on('click', function () {
-		$('html').animate({ scrollTop: 0 }, 1000);
+		$('html').animate({ scrollTop: 0 }, 2000);
 	});
+
 
 	//Mobile menu
 

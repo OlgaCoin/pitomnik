@@ -574,6 +574,8 @@
 					justify-content: start;
 					align-items: center;
 					gap: 20px;
+					border: $border;
+					border-radius: 0;
 					&::after {
 						display: none;
 					}
@@ -583,6 +585,11 @@
 					&:hover h4,
 					&:hover h5 {
 						color: $green;
+					}
+					&:hover {
+						&:hover .section-blog__img img {
+							filter: none;
+						}
 					}
 					& .section-blog__img {
 						overflow: hidden;

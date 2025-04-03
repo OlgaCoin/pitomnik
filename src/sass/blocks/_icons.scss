@@ -117,9 +117,13 @@
 	&__wrapper {
 		position: relative;
 		display: block;
+		transition: transform 0.3s linear;
 		& i {
 			font-size: 30px;
 			color: $t_dark;
+		}
+		&:hover {
+			transform: scale(1.1);
 		}
 		& .cart__num {
 			display: flex;
