@@ -72,6 +72,9 @@
 			display: none;
 		}
 	}
+	&--page {
+		box-shadow: $shadow_primary;
+	}
 }
 .contacts__block {
 	display: inline-flex;

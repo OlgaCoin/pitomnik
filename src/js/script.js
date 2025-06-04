@@ -783,6 +783,7 @@ $(document).ready(function () {
 			.closest('div.container').find('div.section-contacts__item').removeClass('active').eq($(this).index()).addClass('active');
 	});
 
+
 });
 
 

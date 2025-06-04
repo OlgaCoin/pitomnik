@@ -15,4 +15,199 @@
 			display: none;
 		}
 	}
+	&-page {
+		margin-bottom: 50px;
+		border: $border_l-green;
+		&__menu {
+			& > li {
+				&.list {
+					& > a {
+						border-bottom: $border_l-green;
+						display: flex;
+						justify-content: flex-start;
+						align-items: center;
+						width: 100%;
+						text-decoration: none;
+						padding: 0 60px 0 20px;
+						color: $t_titles;
+						position: relative;
+						min-height: 62px;
+						transition: $trans;
+						&:hover {
+							background-color: $bg;
+							color: $green;
+							& i::before {
+								color: $green;
+							}
+						}
+						& i {
+							margin-right: 20px;
+							font-size: 32px;
+							text-align: center;
+							&::before {
+								transition: $trans;
+							}
+						}
+						& span {
+							font-size: 18px;
+							line-height: 24px;
+							&.badge-count {
+								position: absolute;
+								right: 20px;
+								border: $border_l-green;
+								border-radius: 10px;
+								font-size: 14px;
+								color: $t_primary;
+								line-height: 22px;
+								padding: 0 8px;
+								background-color: #fff;
+							}
+						}
+					}
+					& ul {
+						border-bottom: $border_l-green;
+					}
+					&.active {
+						& > a {
+							background-color: $bg;
+							color: $green;
+							& i::before {
+								color: $green;
+							}
+						}
+					}
+				}
+			}
+		}
+		&__submenu {
+			// display: none;
+			padding: 12px 0;
+			overflow-y: auto;
+			max-height: 400px;
+			& li {
+				min-height: 48px;
+				& a {
+					position: relative;
+					padding: 16px 20px 16px 72px;
+					font-size: 16px;
+					color: $t_titles;
+					line-height: 22px;
+					display: inline-flex;
+					transition: $trans;
+					width: 100%;
+					&::before {
+						content: "–";
+						font-weight: 500;
+						font-size: 16px;
+						position: absolute;
+						left: 26px;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+					&:hover,
+					&.current {
+						color: $green;
+					}
+				}
+			}
+		}
+	}
+}
+
+//scrollbar
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 7px;
+}
+::-webkit-scrollbar-button {
+	width: 0px;
+	height: 0px;
+}
+::-webkit-scrollbar-thumb {
+	background: #e0f0e8;
+	border: 0px none #ffffff;
+	border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #c2e0d1;
+}
+::-webkit-scrollbar-thumb:active {
+	background: #c2e0d1;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+	border: 0px none #ffffff;
+	border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+	background: transparent;
+}
+::-webkit-scrollbar-track:active {
+	background: transparent;
+}
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+.breadcrumbs {
+	display: inline-flex;
+	flex-wrap: wrap;
+	margin-bottom: 14px;
+	&__item {
+		position: relative;
+		margin-right: 24px;
+		&:not(:last-child)::after {
+			position: absolute;
+			content: "\e903";
+			font-family: "icomoon";
+			font-size: 24px;
+			color: $t_titles;
+			right: -24px;
+			top: 2px;
+		}
+		& a {
+			color: $green_primary;
+			font-weight: 500;
+			font-size: 17px;
+			transition: all 0.3s linear;
+			&.current {
+				color: $t_titles;
+			}
+			&:hover {
+				color: $green;
+			}
+		}
+	}
+}
+.paginator {
+	display: flex;
+	justify-content: start;
+	margin-right: 64px;
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 44px;
+		height: 44px;
+		font-weight: 500;
+		font-size: 20px;
+		color: $t_primary;
+		border: $border_l-green;
+		border-radius: 6px;
+		margin-right: 14px;
+		margin-bottom: 28px;
+		transition: $trans;
+		background-color: $bg;
+		&:hover,
+		&.active,
+		&:focus {
+			color: $white;
+			background-color: $green_primary;
+			border: 1px solid $green_primary;
+		}
+		&.arrow {
+			font-size: 24px;
+		}
+	}
 }

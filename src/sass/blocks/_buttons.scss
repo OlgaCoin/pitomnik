@@ -25,6 +25,13 @@
 		line-height: 140%;
 		font-weight: 500;
 	}
+	&--sm {
+		height: 44px;
+		padding: 0 20px;
+		font-size: 20px;
+		line-height: 140%;
+		font-weight: 500;
+	}
 	&--green {
 		box-shadow: $shadow_green;
 		background-image: linear-gradient(90deg, #339967 0%, #1cae4d 100%);
