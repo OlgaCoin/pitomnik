@@ -105,6 +105,11 @@
 		bottom: 40px;
 		right: 2px;
 	}
+	.card {
+		&-blog {
+			min-height: 576px;
+		}
+	}
 }
 
 @media (max-width: 1199px) {
@@ -712,6 +717,19 @@
 	.sidebar {
 		display: none;
 	}
+	.card {
+		&-blog {
+			min-height: 526px;
+			&__img {
+				height: 210px;
+			}
+			&__title {
+				& a {
+					font-size: 26px;
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 767px) {
@@ -941,6 +959,14 @@
 		& select {
 			padding: 8px 10px;
 			font-size: 16px;
+		}
+	}
+	.card {
+		&-blog {
+			min-height: auto;
+			&__img {
+				height: 268px;
+			}
 		}
 	}
 }
@@ -1342,5 +1368,22 @@
 	}
 	.sorting-block {
 		flex-wrap: wrap;
+	}
+	.card {
+		&-blog {
+			&__img {
+				height: 166px;
+				&--blank {
+					& img {
+						width: 140px;
+					}
+				}
+			}
+			&__title {
+				& a {
+					font-size: 24px;
+				}
+			}
+		}
 	}
 }
