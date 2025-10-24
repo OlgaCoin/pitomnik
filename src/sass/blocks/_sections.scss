@@ -121,7 +121,8 @@
 			position: relative;
 			min-height: 410px;
 			width: 100%;
-			background: linear-gradient(254deg, #ddece5 0%, #eff6f3 93.68%),
+			background:
+				linear-gradient(254deg, #ddece5 0%, #eff6f3 93.68%),
 				linear-gradient(319deg, rgba(221, 236, 229, 0.5) 0%, rgba(244, 251, 248, 0.5) 80.64%);
 			padding-top: 30px;
 			&::before {
@@ -244,7 +245,8 @@
 			position: relative;
 			height: 570px;
 			width: 100%;
-			background: linear-gradient(254deg, #ddece5 0%, #eff6f3 93.68%),
+			background:
+				linear-gradient(254deg, #ddece5 0%, #eff6f3 93.68%),
 				linear-gradient(319deg, rgba(221, 236, 229, 0.5) 0%, rgba(244, 251, 248, 0.5) 80.64%);
 			&::before {
 				position: absolute;

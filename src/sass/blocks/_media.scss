@@ -1004,6 +1004,8 @@
 				height: 268px;
 			}
 			&--article {
+				height: auto;
+				margin-bottom: 20px;
 				& .card-blog__img {
 					height: 206px;
 				}
