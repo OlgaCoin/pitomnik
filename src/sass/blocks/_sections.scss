@@ -478,6 +478,14 @@
 	&-portfolio {
 		padding: 0;
 	}
+	&-page {
+		padding-top: 0;
+		& .section__header {
+			& .section__title {
+				@include h-3;
+			}
+		}
+	}
 }
 
 //promo

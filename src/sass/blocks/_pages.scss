@@ -61,3 +61,117 @@
 		}
 	}
 }
+.article {
+	&__content {
+		@include p2-reg;
+		& p {
+			margin-bottom: 20px;
+		}
+		& ol,
+		& ul {
+			padding-left: 36px;
+			& li {
+				line-height: 27px;
+				margin-bottom: 16px;
+				position: relative;
+			}
+		}
+		& ol {
+			counter-reset: li;
+			& > li {
+				list-style-type: none;
+				&::before {
+					position: absolute;
+					left: -36px;
+					counter-increment: li;
+					content: counter(li) ". ";
+					color: $green_primary;
+					font-weight: 600;
+					top: 0;
+				}
+			}
+		}
+		& ul {
+			& > li::before {
+				position: absolute;
+				left: -36px;
+				content: "";
+				width: 10px;
+				height: 10px;
+				background: $gradient_primary;
+				top: 11px;
+				border-radius: 50%;
+			}
+		}
+	}
+	&__img-block {
+		margin: 40px 0;
+	}
+	&__img {
+		border-radius: $radius_sm;
+		overflow: hidden;
+		height: auto;
+		width: 100%;
+		& img {
+			width: 100%;
+		}
+		&-caption {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 125%;
+			color: #9e9c9c;
+			margin-top: 12px;
+			display: block;
+		}
+	}
+	&__quote {
+		font-family: $f_primary;
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 136%;
+		color: $t_primary;
+		border-radius: 8px;
+		padding: 30px 50px;
+		background-color: $bg;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 36px 0;
+		background-image: url(../icons/quote_sm.svg);
+		background-repeat: no-repeat;
+		background-size: 74px 56px;
+		background-position: 15px 12px;
+		& > p {
+			margin-bottom: 0;
+		}
+	}
+	&__link {
+		color: #339967;
+		font-weight: 600;
+		transition: all 0.3s linear;
+		&:hover {
+			color: #006634;
+		}
+	}
+	&__subtitle {
+		@include h-3;
+		margin: 30px 0;
+	}
+	&__share {
+		display: flex;
+		justify-content: flex-start;
+		@include a-sm;
+	}
+	&__social {
+		display: flex;
+		justify-content: space-between;
+		gap: 12px;
+		margin-left: 20px;
+		& a {
+			transition: opacity 0.3s linear;
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+}

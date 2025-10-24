@@ -1,0 +1,56 @@
+.sidebar {
+	&-block {
+		border: $border;
+		border-radius: 8px;
+		padding: 20px 16px 20px 20px;
+		margin-bottom: 42px;
+		&__title {
+			font-family: $f_titles;
+			font-weight: 700;
+			font-size: 22px;
+			line-height: 127%;
+			color: $t_titles;
+			margin-bottom: 36px;
+		}
+		&__labels {
+			display: flex;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			gap: 16px;
+		}
+		&__label {
+			border: $border_l-green;
+			border-radius: 8px;
+			padding: 0 18px;
+			height: 52px;
+			background-color: $bg;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: $f_primary;
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 140%;
+			color: #464a48;
+			transition: $trans;
+			&:hover {
+				color: #095024;
+			}
+		}
+		&__link {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 133%;
+			color: $t_titles;
+			display: block;
+			margin-bottom: 22px;
+			transition: $trans;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&:hover {
+				color: #095024;
+			}
+		}
+	}
+}

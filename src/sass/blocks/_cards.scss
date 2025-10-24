@@ -264,6 +264,9 @@
 			@include p3-reg;
 			margin-bottom: 0;
 		}
+		&--article {
+			height: 100%;
+		}
 	}
 	&--mrg {
 		margin-bottom: 24px;

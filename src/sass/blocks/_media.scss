@@ -108,6 +108,32 @@
 	.card {
 		&-blog {
 			min-height: 576px;
+			&--article {
+				min-height: 484px;
+				& .card-blog__img {
+					height: 206px;
+				}
+			}
+		}
+	}
+	.page--article {
+		& .page__content {
+			margin-bottom: 90px;
+		}
+		& .section-page {
+			padding-top: 0;
+		}
+	}
+	.sidebar {
+		&-block {
+			&__label {
+				padding: 0 16px;
+				height: 48px;
+				font-size: 18px;
+			}
+		}
+		&--right {
+			display: none;
 		}
 	}
 }
@@ -728,6 +754,16 @@
 					font-size: 26px;
 				}
 			}
+			&--article {
+				& .card-blog__img {
+					height: 138px;
+				}
+				& .card-blog__title {
+					& a {
+						font-size: 22px;
+					}
+				}
+			}
 		}
 	}
 }
@@ -966,6 +1002,11 @@
 			min-height: auto;
 			&__img {
 				height: 268px;
+			}
+			&--article {
+				& .card-blog__img {
+					height: 206px;
+				}
 			}
 		}
 	}
@@ -1331,6 +1372,18 @@
 		}
 		&-title {
 			font-size: 42px;
+		}
+	}
+	.article {
+		&__img {
+			&-block {
+				&--double {
+					margin: 40px 0 20px 0;
+					& .article__img {
+						margin-bottom: 20px;
+					}
+				}
+			}
 		}
 	}
 }
