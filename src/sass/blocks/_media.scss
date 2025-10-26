@@ -1134,20 +1134,14 @@
 		&-video {
 			& .video {
 				& .play_button {
-					width: 70px;
-					height: 70px;
-					top: calc(50% - 35px);
-					left: calc(50% - 35px);
+					display: none;
 				}
 			}
 		}
 		&-feedback {
 			& .video {
 				& .play_button {
-					width: 70px;
-					height: 70px;
-					top: calc(50% - 35px);
-					left: calc(50% - 35px);
+					display: none;
 				}
 			}
 		}
@@ -1390,10 +1384,7 @@
 		&__video {
 			& .video {
 				& .play_button {
-					width: 70px;
-					height: 70px;
-					top: calc(50% - 35px);
-					left: calc(50% - 35px);
+					display: none;
 				}
 			}
 		}
