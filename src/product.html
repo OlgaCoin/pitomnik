@@ -382,7 +382,8 @@
 															aria-label="Увеличить количество">+</button>
 													</div>
 													<div class="tocart-wrapper">
-														<button type="button" class="card__btn btn btn--md btn--addtocart">
+														<button type="button"
+															class="card__btn btn btn--md btn--addtocart click-here--tocart">
 															<i class="icon-icon_cart icon--left"></i>
 															<span>В корзину</span>
 														</button>
@@ -801,6 +802,7 @@
 			<div class="bg-overlay"></div>
 		</div>
 
+		<!-- Таблица размеров -->
 		<div class="modal-table">
 			<div class="modal-inner">
 				<div class="close-btn">
@@ -842,6 +844,30 @@
 								<div class="head-cell head-cell--txt">Экстра, формовка, <br> штамб и т. д.</div>
 								<div class="descr-cell">Дополнительные характеристики внешнего вида растений.</div>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bg-overlay"></div>
+		</div>
+
+		<!-- Добавлено в корзину! -->
+		<div class="modal-tocart">
+			<div class="modal-inner">
+				<div class="close-btn">
+					<i class="icon-icon_close"></i>
+				</div>
+				<div class="modal-wrapper">
+					<div class="popup">
+						<div class="modal-tocart__content">
+							<img src="icons/icon-check--md.svg" alt="check">
+							<div class="popup__header">Товар добавлен в корзину</div>
+							<a href="cart.html" class="btn btn--lg btn--green">
+								Перейти в корзину
+							</a>
+							<a href="catalog.html" class="link--lg">
+								Продолжить покупки
+							</a>
 						</div>
 					</div>
 				</div>

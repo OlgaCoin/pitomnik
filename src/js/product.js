@@ -40,13 +40,22 @@ $(document).ready(function () {
 		handleSwitchSlick(mediaQuery);
 	});
 
-	// popup
+	// popups
 	$(".click-here--table").on('click', function () {
-		$(".modal-table").addClass('model-table--open');
+		$(".modal-table").addClass('modal-table--open');
 	});
 	$(".modal-table .close-btn, .modal-table .bg-overlay").click(function () {
-		$(".modal-table").removeClass('model-table--open');
+		$(".modal-table").removeClass('modal-table--open');
 	});
+
+	$(".click-here--tocart").on('click', function () {
+		$(".modal-tocart").addClass('modal-tocart--open');
+	});
+	$(".modal-tocart .close-btn, .modal-tocart .bg-overlay").click(function () {
+		$(".modal-tocart").removeClass('modal-tocart--open');
+	});
+
+
 
 	// product counter
 	function inputNumber(e) {
