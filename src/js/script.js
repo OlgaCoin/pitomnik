@@ -113,10 +113,10 @@ $(document).ready(function () {
 	// popup
 
 	$(".click-here").on('click', function () {
-		$(".modal-main").addClass('model-open');
+		$(".modal-main").addClass('model--open');
 	});
 	$(".close-btn, .bg-overlay").click(function () {
-		$(".modal-main").removeClass('model-open');
+		$(".modal-main").removeClass('model--open');
 	});
 
 	// top-slider

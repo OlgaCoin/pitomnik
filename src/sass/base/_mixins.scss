@@ -94,3 +94,8 @@
 	color: $green_primary;
 	transition: $trans;
 }
+@mixin caption {
+	font-weight: 600;
+	font-size: 16px;
+	color: $t_titles;
+}

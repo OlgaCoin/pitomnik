@@ -80,7 +80,7 @@
 			opacity: 0.8;
 		}
 	}
-	&--tocart {
+	&--tocart, &--addtocart {
 		font-size: 22px;
 		background: linear-gradient(90deg, #339967 0%, #1cae4d 100%);
 		&.active {
@@ -93,6 +93,23 @@
 		}
 		&:hover {
 			opacity: 0.8;
+		}
+	}
+	&--addtocart {
+		&.done {
+			display: none;
+		}
+	}
+	&--added {
+		display: none;
+		font-weight: 600;
+		background: #e9f5e9;
+		color: $green;
+		&.active {
+			display: flex;
+		}
+		&:hover {
+			color: $green;
 		}
 	}
 	&--prev,

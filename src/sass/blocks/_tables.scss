@@ -1,0 +1,36 @@
+.modal-table {
+	&__item {
+		display: flex;
+		justify-content: flex-start;
+		&:nth-child(odd) {
+			background-color: $bg;
+		}
+		& .head-cell {
+			min-width: 170px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 143%;
+			color: $t_titles;
+			padding: 16px 20px;
+			flex-wrap:wrap;
+			&--abbr {
+				text-transform: uppercase;
+			}
+		}
+		& .descr-cell {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			font-family: $f_primary;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 143%;
+			color: $t_primary;
+			padding: 16px 20px 16px 10px;
+			text-align: left;
+		}
+	}
+}

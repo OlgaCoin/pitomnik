@@ -1,4 +1,4 @@
-.counter {
+.counter, .product-counter {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -40,7 +40,8 @@
 		margin: 0 5px 5px;
 	}
 }
-input.counter__input {
+input.counter__input,
+input.product-counter__input {
 	max-width: 100%;
 	background-color: #fbfbfb;
 	text-align: center;
