@@ -5,6 +5,9 @@
 	}
 	&__header {
 		margin-bottom: 40px;
+		&--full {
+			margin-bottom: 64px;
+		}
 	}
 	&-title {
 		@include h-2;

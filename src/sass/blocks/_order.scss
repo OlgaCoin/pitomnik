@@ -1,0 +1,173 @@
+.order {
+	&-list {
+		&__header {
+			display: grid;
+			grid-template-columns: 1.5fr 3fr 2fr 1.5fr 2fr 1.5fr 0.5fr;
+			margin: 0 20px 16px 20px;
+			column-gap: 20px;
+		}
+		&__body {
+			margin-bottom: 40px;
+		}
+		&__col-title {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 125%;
+		}
+		&__item {
+			display: grid;
+			grid-template-columns: 1.5fr 3fr 2fr 1.5fr 2fr 1.5fr 0.5fr;
+			column-gap: 20px;
+			border: 1px solid $outline;
+			border-radius: $radius_sm;
+			padding: 20px;
+			margin-bottom: 24px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&__img {
+			width: 100px;
+			height: 100px;
+			align-self: center;
+			& img {
+				border-radius: 8px;
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		&__descr {
+			align-self: center;
+		}
+		&__title {
+			@include h-5;
+			margin-bottom: 14px;
+			& a {
+				transition: $trans;
+				color: #423a25;
+				&:hover {
+					color: $green;
+				}
+			}
+		}
+		&__specs {
+			display: flex;
+			flex-direction: column;
+			& .caption {
+				font-weight: 600;
+				font-size: 16px;
+				color: $t_titles;
+				& > span {
+					@include p3-reg;
+					color: $t_primary;
+					margin-left: 8px;
+				}
+			}
+		}
+		&__model {
+			@include p3-reg;
+			color: $t_primary;
+			align-self: center;
+		}
+		&__price {
+			align-self: center;
+			justify-self: start;
+			font-family: $f_titles;
+			color: $t_titles;
+			margin: 0;
+			&-wrapper {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+			}
+			&--black {
+				color: $t_titles;
+			}
+			&--red {
+				color: $red;
+			}
+			&--black,
+			&--red {
+				font-weight: 600;
+				font-size: 24px;
+			}
+			&--gray {
+				font-weight: 600;
+				font-size: 18px;
+				color: $t_light;
+				text-decoration: line-through;
+			}
+		}
+		&__counter {
+			align-self: center;
+			padding: 0;
+			max-width: 122px;
+			& .counter {
+				& .counter__box {
+					width: 16px;
+				}
+			}
+		}
+		&__sum {
+			align-self: center;
+			font-family: $f_titles;
+			font-weight: 600;
+			font-size: 24px;
+			color: $t_titles;
+			line-height: 1.4;
+		}
+		&__del {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		&__btn {
+			background-color: #fff;
+			transition: $trans;
+			padding: 0;
+			display: flex;
+			align-items: center;
+			&:hover {
+				& span, & i {
+					color: $red;
+				}
+			}
+			& i {
+				font-size: 24px;
+				color: $t_primary;
+				transition: $trans;
+			}
+			& span {
+				display: none;
+				font-size: 16px;
+				font-weight: 500;
+				color: $t_primary;
+				transition: $trans;
+				margin-left: 6px;
+			}
+		}
+		&__footer {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			padding: 0 0 18px 0;
+		}
+		&__total {
+			@include h-4;
+			margin-bottom: 30px;
+			& > span {
+				font-family: $f_titles;
+				font-weight: 600;
+				font-size: 30px;
+				color: $t_titles;
+				margin-left: 24px;
+			}
+		}
+		&__btns {
+			display: flex;
+			justify-content: flex-end;
+			gap: 24px;
+		}
+	}
+}

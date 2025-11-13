@@ -80,7 +80,8 @@
 			opacity: 0.8;
 		}
 	}
-	&--tocart, &--addtocart {
+	&--tocart,
+	&--addtocart {
 		font-size: 22px;
 		background: linear-gradient(90deg, #339967 0%, #1cae4d 100%);
 		&.active {
@@ -123,5 +124,16 @@
 	}
 	&--mob {
 		display: none;
+	}
+	&--blank {
+		border: $border_l-green;
+		background-color: $bg;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 138%;
+		color: $t_primary;
+		&:hover {
+			color: $green;
+		}
 	}
 }
