@@ -1540,7 +1540,7 @@
 			}
 		}
 	}
-	.modal-tocart {
+	.modal-tocart, .modal-check {
 		&__content {
 			& img {
 				width: 52px;
@@ -1637,7 +1637,7 @@
 			}
 		}
 	}
-	.modal-tocart {
+	.modal-tocart, .modal-check {
 		&__content {
 			& img {
 				margin-bottom: 20px;
@@ -1657,6 +1657,11 @@
 			& .modal-inner {
 				max-width: 300px;
 			}
+		}
+	}
+	.modal-check {
+		& p {
+			font-size: 17px;
 		}
 	}
 	.order {

@@ -96,12 +96,12 @@
 			opacity: 0.8;
 		}
 	}
-	&--addtocart {
+	&--addtocart, &--check {
 		&.done {
 			display: none;
 		}
 	}
-	&--added {
+	&--added, &--checked {
 		display: none;
 		font-weight: 600;
 		background: #e9f5e9;

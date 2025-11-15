@@ -1,5 +1,6 @@
 .modal-main,
 .modal-tocart,
+.modal-check,
 .modal-table {
 	text-align: center;
 	overflow: hidden;
@@ -23,6 +24,7 @@
 }
 .model--open,
 .modal-tocart--open,
+.modal-check--open,
 .modal-table--open {
 	z-index: 99999;
 	opacity: 1;
@@ -53,11 +55,13 @@
 .modal-table--open .modal-inner {
 	width: 700px;
 }
-.modal-tocart--open .modal-inner {
+.modal-tocart--open .modal-inner,
+.modal-check--open .modal-inner {
 	max-width: 460px;
 }
 .model--open .modal-inner,
 .modal-tocart--open .modal-inner,
+.modal-check--open .modal-inner,
 .modal-table--open .modal-inner {
 	transform: translate(0, 0);
 	position: relative;
@@ -65,6 +69,7 @@
 }
 .model--open .bg-overlay,
 .modal-tocart--open .bg-overlay,
+.modal-check--open .bg-overlay,
 .modal-table--open .bg-overlay {
 	background: rgba(0, 0, 0, 0.6);
 	z-index: 99;
@@ -136,12 +141,29 @@
 			}
 		}
 	}
+
 	& .popup__header {
 		@include h-3;
 		margin-bottom: 40px;
 	}
 	& .modal-wrapper {
 		padding: 50px;
+	}
+}
+.modal-check {
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		& img {
+			width: 64px;
+			height: 64px;
+			margin-bottom: 28px;
+		}
+		& p {
+			@include p2-reg;
+		}
 	}
 }
 
