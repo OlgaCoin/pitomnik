@@ -3,6 +3,11 @@
 		margin-top: 60px;
 		margin-bottom: 134px;
 	}
+	&--product {
+		& .page__content {
+			margin-bottom: 84px;
+		}
+	}
 	&__header {
 		margin-bottom: 40px;
 		&--full {

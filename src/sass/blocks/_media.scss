@@ -813,7 +813,49 @@
 			}
 		}
 		&__info {
-			margin-bottom: 30px;
+			margin-bottom: 40px;
+		}
+		&-list {
+			&__item {
+				grid-template-columns: 5fr 4fr 3fr;
+				row-gap: 14px;
+				column-gap: 20px;
+				grid-template-areas:
+					"b d d"
+					"a c e";
+				& > * {
+					align-self: start;
+				}
+			}
+			&__header {
+				display: none;
+			}
+			&__size {
+				grid-area: a;
+				align-self: center;
+			}
+			&__title {
+				grid-area: b;
+				font-size: 20px;
+			}
+			&__counter {
+				grid-area: c;
+			}
+			&__price {
+				grid-area: d;
+				&-wrapper {
+					flex-direction: row;
+					align-items: center;
+				}
+				&--red {
+					margin-right: 10px;
+				}
+			}
+			&__btn {
+				grid-area: e;
+				align-self: center;
+				justify-self: center;
+			}
 		}
 	}
 	.order {
@@ -1150,6 +1192,48 @@
 		&__item {
 			& .descr-cell {
 				padding: 16px 20px 16px 0;
+			}
+		}
+	}
+	.product {
+		&-checkout {
+			&__heading {
+				flex-direction: column;
+				align-items: flex-start;
+				margin-bottom: 14px;
+			}
+			&__title {
+				margin-bottom: 10px;
+			}
+		}
+		&-list {
+			&__item {
+				grid-template-columns: 6fr 6fr;
+				row-gap: 14px;
+				column-gap: 20px;
+				grid-template-areas:
+					"b d"
+					"b c"
+					"a e";
+				& > * {
+					align-self: start;
+				}
+			}
+			&__title {
+				font-size: 22px;
+			}
+			&__counter {
+				justify-self: end;
+			}
+			&__price {
+				justify-self: end;
+				&-wrapper {
+					flex-direction: row;
+				}
+			}
+			&__btn {
+				align-self: center;
+				justify-self: end;
 			}
 		}
 	}
@@ -1540,7 +1624,8 @@
 			}
 		}
 	}
-	.modal-tocart, .modal-check {
+	.modal-tocart,
+	.modal-check {
 		&__content {
 			& img {
 				width: 52px;
@@ -1637,7 +1722,8 @@
 			}
 		}
 	}
-	.modal-tocart, .modal-check {
+	.modal-tocart,
+	.modal-check {
 		&__content {
 			& img {
 				margin-bottom: 20px;
@@ -1696,6 +1782,28 @@
 			gap: 16px;
 		}
 	}
+	.product {
+		&-list {
+			&__item {
+				grid-template-columns: 5fr 7fr;
+				column-gap: 14px;
+			}
+			&__title {
+				font-size: 18px;
+			}
+			&__size {
+				align-self: center;
+			}
+			&__price {
+				&--red, &--black {
+					font-size: 22px;
+				}
+				&--gray {
+					font-size: 16px;
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 360px) {
@@ -1730,21 +1838,6 @@
 				& a {
 					font-size: 24px;
 				}
-			}
-		}
-	}
-	.product {
-		&__delivery {
-			&-icon {
-				margin-right: 16px;
-			}
-		}
-		&-descr {
-			&__tabs {
-				gap: 18px;
-			}
-			&__tab {
-				font-size: 24px;
 			}
 		}
 	}
