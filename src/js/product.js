@@ -55,8 +55,6 @@ $(document).ready(function () {
 		$(".modal-tocart").removeClass('modal-tocart--open');
 	});
 
-
-
 	// product counter
 	function inputNumber(e) {
 

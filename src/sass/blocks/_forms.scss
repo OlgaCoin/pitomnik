@@ -91,3 +91,47 @@ label.radio {
 		opacity: 0;
 	}
 }
+.sorting-block {
+	display: inline-flex;
+	justify-content: start;
+	& select {
+		outline: none;
+		margin-bottom: 0;
+		margin-top: 16px;
+		margin-right: 16px;
+		background: $bg;
+		appearance: none;
+		padding: 8px 20px;
+		color: $t_titles;
+		font-weight: 500;
+		font-size: 18px;
+		width: auto;
+		& option {
+			text-transform: none;
+			font-size: 16px;
+		}
+		&[data-chosen="1"] {
+			background: $green_primary;
+			color: $white;
+			& option {
+				background: $white;
+				color: $t_titles;
+			}
+		}
+	}
+	&--price {
+		gap: 24px;
+		& select {
+			margin-top: 0;
+			margin-right: 0;
+			padding-right: 38px;
+			background: url("../icons/chevron_down.svg") no-repeat right $bg;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background-position:
+				right 10px top 50%,
+				0 0;
+		}
+	}
+}
