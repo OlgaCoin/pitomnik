@@ -185,4 +185,21 @@
 		}
 	}
 }
-
+.error {
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		margin-top: 140px;
+		& > img {
+			width: 740px;
+			height: auto;
+			margin-bottom: 90px;
+		}
+		& p {
+			margin-bottom: 60px;
+		}
+	}
+}
