@@ -180,7 +180,8 @@
 		display: block;
 	}
 	&-slider,
-	&-slider1 {
+	&-slider1,
+	&-slider2 {
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -227,7 +228,8 @@
 	}
 }
 .close-btn.close-modal,
-.close-btn.close-modal1 {
+.close-btn.close-modal1,
+.close-btn.close-modal2 {
 	position: absolute;
 	right: 25px;
 	top: 25px;

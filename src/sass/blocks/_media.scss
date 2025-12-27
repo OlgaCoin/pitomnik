@@ -339,6 +339,14 @@
 			}
 		}
 	}
+	.contacts {
+		&-list {
+			margin-top: 0;
+			flex-direction: row;
+			margin-bottom: 40px;
+			gap: 60px;
+		}
+	}
 }
 
 @media (max-width: 991px) {
@@ -933,6 +941,14 @@
 			width: 100%;
 		}
 	}
+	.contacts {
+		&-list {
+			gap: 40px;
+		}
+		& .section-contacts__item-map {
+			margin-top: 30px;
+		}
+	}
 }
 
 @media (max-width: 767px) {
@@ -1350,6 +1366,13 @@
 				grid-area: b;
 				font-size: 22px;
 			}
+		}
+	}
+	.contacts {
+		&-list {
+			flex-direction: column;
+			gap: 26px;
+			margin-bottom: 60px;
 		}
 	}
 }

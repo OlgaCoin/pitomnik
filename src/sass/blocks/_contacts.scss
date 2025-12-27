@@ -96,3 +96,42 @@
 		}
 	}
 }
+.contacts {
+	&-list {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		margin-top: 90px;
+		&__item {
+			display: flex;
+			flex-direction: column;
+			&-title {
+				@include h-4;
+				margin-bottom: 16px;
+			}
+			&-phone {
+				font-family: $f_titles;
+				font-weight: 600;
+				font-size: 20px;
+				color: $t_titles;
+				transition: $trans;
+				&:hover {
+					color: $green;
+				}
+			}
+			&-caption {
+				font-size: 12px;
+				letter-spacing: 0.01em;
+				color: #616161;
+				margin-top: -2px;
+			}
+			&-time {
+				font-weight: 500;
+				font-size: 18px;
+			}
+		}
+	}
+	& .section-contacts__item-wrapper address {
+    margin-bottom: 0;
+}
+}
