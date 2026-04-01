@@ -97,7 +97,7 @@
 		}
 		&-opt {
 			&__right {
-				padding: 50px 0 50px 50px;
+				padding: 50px 0 50px 10px;
 			}
 		}
 		&.section-also {
@@ -270,14 +270,22 @@
 				line-height: 140%;
 			}
 			&__right {
-				padding: 40px 0 50px 15px;
+				padding: 40px 0 50px 8px;
 			}
 			&__phone {
-				font-size: 26px;
+				font-size: 22px;
 			}
 			&__list {
 				& li {
 					font-size: 21px;
+				}
+			}
+			&__social {
+				gap: 22px;
+			}
+			&__btns {
+				& a {
+					font-size: 19px;
 				}
 			}
 		}
@@ -1130,6 +1138,9 @@
 			&__right {
 				padding: 30px 70px 50px;
 			}
+			&__social {
+				gap: 12px;
+			}
 		}
 		&-blog {
 			&__descr {
@@ -1598,6 +1609,9 @@
 			&__phone {
 				font-size: 20px;
 			}
+			&__btns {
+				flex-direction:column;
+			}
 		}
 		&-projects {
 			& h3 {
@@ -1858,6 +1872,11 @@
 						top: -225px;
 					}
 				}
+			}
+		}
+		&-opt {
+			&__phone {
+				font-size: 19px;
 			}
 		}
 	}

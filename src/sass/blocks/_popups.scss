@@ -1,5 +1,6 @@
 .modal-main,
 .modal-tocart,
+.modal-price,
 .modal-check,
 .modal-table {
 	text-align: center;
@@ -24,6 +25,7 @@
 }
 .model--open,
 .modal-tocart--open,
+.modal-price--open,
 .modal-check--open,
 .modal-table--open {
 	z-index: 99999;
@@ -56,11 +58,13 @@
 	width: 700px;
 }
 .modal-tocart--open .modal-inner,
+.modal-price--open .modal-inner,
 .modal-check--open .modal-inner {
 	max-width: 460px;
 }
 .model--open .modal-inner,
 .modal-tocart--open .modal-inner,
+.modal-price--open .modal-inner,
 .modal-check--open .modal-inner,
 .modal-table--open .modal-inner {
 	transform: translate(0, 0);
@@ -69,6 +73,7 @@
 }
 .model--open .bg-overlay,
 .modal-tocart--open .bg-overlay,
+.modal-price--open .bg-overlay,
 .modal-check--open .bg-overlay,
 .modal-table--open .bg-overlay {
 	background: rgba(0, 0, 0, 0.6);
@@ -102,6 +107,16 @@
 	}
 	&__descr {
 		@include p2-reg;
+	}
+}
+.modal-price {
+	& a {
+		color: #339967;
+		font-weight: 600;
+		transition: all 0.3s linear;
+		&:hover {
+			color: #006634;
+		}
 	}
 }
 .modal-table {

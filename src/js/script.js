@@ -119,6 +119,13 @@ $(document).ready(function () {
 		$(".modal-main").removeClass('model--open');
 	});
 
+	$(".click-here--price").on('click', function () {
+		$(".modal-price").addClass('model--open');
+	});
+	$(".close-btn, .bg-overlay").click(function () {
+		$(".modal-price").removeClass('model--open');
+	});
+
 	// top-slider
 
 	jQuery(function () {
